@@ -1,0 +1,10 @@
+%h1 Logga in
+%p.instructions Logga in med det användarnamn du har personalkatalogen
+= form_tag sessions_path, :class => 'basic-form', :id => "login-form" do
+  .form-row
+    = label_tag :username, 'Användarnamn:'
+    = text_field_tag :username, params[:username], :class => "medium"
+  .form-row
+    = label_tag :password, 'Lösenord:'
+    = password_field_tag :password, nil, :class => "medium"
+  .actions= submit_tag "Logga in"

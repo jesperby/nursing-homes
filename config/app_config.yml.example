@@ -1,0 +1,34 @@
+defaults: &defaults
+  secret_token: "ENTER_SECRET"
+  max_number_of_images: 3
+  max_number_of_attachments: 3
+  ldap:
+    host: "ldap.example.org"
+    port: "636"
+    base_dn: "OU=Personal,OU=Organisation,OU=Example,DC=adm,DC=example,DC=org"
+    proxy_user: "ENTER_PROXY_USER"
+    proxy_password: "ENTER_PROXY_PASS"
+
+development:
+  <<: *defaults
+  title_suffix: "Hitta & jämför äldreboenden - Malmö stad (utvecklingsserver)"
+  asset_host: //www.malmo.se/assets-2.0
+  map_url: "//xyz.malmo.se/rest/1.0/map-test/?config=configs/aldreboende-1.0.js"
+
+test:
+  <<: *defaults
+  title_suffix: "Hitta & jämför äldreboenden - Malmö stad (testserver)"
+  asset_host: "//www.malmo.se/assets-2.0"
+  map_url: "//xyz.malmo.se/rest/1.0/map-test/?config=configs/aldreboende-1.0.js"
+
+staging:
+  <<: *defaults
+  title_suffix: "Hitta & jämför äldreboenden - Malmö stad (testserver)"
+  asset_host: "//www.malmo.se/assets-2.0"
+  map_url: "//xyz.malmo.se/rest/1.0/map-test/?config=configs/aldreboende-1.0.js"
+
+production:
+  <<: *defaults
+  title_suffix: "Hitta & jämför äldreboenden - Malmö stad"
+  asset_host: "//www.malmo.se/assets-2.0"
+  map_url: "//xyz.malmo.se/rest/1.0/map/?config=configs/aldreboende-1.0.js"

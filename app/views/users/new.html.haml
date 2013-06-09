@@ -1,0 +1,22 @@
+%h1= "Ny användare"
+%p.instructions Sök på personens användarnamn i personalkatalogen, t.ex. "cectro"
+
+= form_for(@user, :html => { :multipart => true, :class => 'basic-form', :id => 'edit-form' }) do |f|
+  - if @user.errors.any?
+    #error_explanation.alert
+      #h2 Vänligen korrigera följande uppgifter:
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  .form-row
+    = f.label :username, 'Användarnamn:'
+    = f.text_field :username, :class => "medium"
+  .form-row
+    = f.label :displayname, "Namn:"
+    = f.text_field :displayname, :readonly => true, :tabindex => -1
+  .form-row
+    = f.label :email, "E-postadress:"
+    = f.text_field :email, :readonly => true, :tabindex => -1
+  .actions
+    = f.submit "Lägg till"
+    = link_to 'Avbryt', users_path, :class => 'cancel'

@@ -1,0 +1,20 @@
+= stylesheet_link_tag "#{APP_CONFIG['asset_host']}/css/external-core.css", "#{APP_CONFIG['asset_host']}/jquery/malmo-theme.css", :media => "all"
+= stylesheet_link_tag "#{APP_CONFIG['asset_host']}/css/malmo-print.css", :media => "print"
+= stylesheet_link_tag  "application", :media => "all"
+/[if lt IE 7]
+  = stylesheet_link_tag "#{APP_CONFIG['asset_host']}/css/malmo-ie-css-fix.css", :media => "all"
+/[if IE 7]
+  = stylesheet_link_tag "#{APP_CONFIG['asset_host']}/css/malmo-ie7-css-fix.css", :media => "all"
+/[if IE]
+  %meta{ "http-equiv" => "x-ua-compatible", "content" => "ie=edge"}
+%script
+  = "var CKEDITOR_BASEPATH = '#{root_path}ckeditor/';"
+  = "var appPath = '#{root_path}';"
+  = "var nursingHomePath = '#{nursing_homes_path}/';"
+  = "var apiPath = '#{api_nursing_homes_path}/';"
+  = "var mapUrl = '#{APP_CONFIG['map_url']}';"
+= javascript_include_tag "#{APP_CONFIG['asset_host']}/jquery/jquery.js",
+                         "#{APP_CONFIG['asset_host']}/js/malmo.js",
+                         "#{APP_CONFIG['asset_host']}/js/external.js",
+                         'application'
+%link{:rel => "shortcut icon", :href => "#{APP_CONFIG['asset_host']}/img/malmo-favicon.ico"}

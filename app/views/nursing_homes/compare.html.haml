@@ -1,0 +1,79 @@
+%ul.actions
+  %li.tiny-button= link_to 'Visa alla boenden', root_path
+
+%h1 Jämför äldreboenden
+#compare
+  - unless @nursing_homes
+    %p.no-records= link_to 'Lägg först till de äldreboenden du vill jämföra till "Min lista."', root_path
+  - else
+
+    %table
+      %thead
+        %tr
+          %td.xy
+          - @nursing_homes.each do |nursing_home|
+            %th{ :class => "item-#{nursing_home.id}" }= link_to nursing_home.name, nursing_home
+      %tbody
+        %tr
+          %td
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }
+              = image_tag nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name
+        %tr
+          %td
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id} remove" }
+              .tiny-button.remove{ "data-id" => nursing_home.id }= "Ta bort"
+        %tr
+          %th Adress:
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }= nursing_home.address
+        %tr
+          %th Stadsområde:
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }= nursing_home.neighborhood
+        %tr
+          %th Lägenheter:
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }= nursing_home.seats
+        %tr
+          %th Hyra:
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }= nursing_home.rent
+        %tr
+          %th Typ av boende:
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }
+              - nursing_home.categories.each do |c|
+                = c.name
+                %br
+        %tr
+          %th Organisationsform:
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }= NursingHome::OWNER_TYPES[nursing_home.owner_type]
+        %tr
+          %th Entreprenör:
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }= nursing_home.owner
+
+      %tr
+        %th.sub-heading{ :colspan => @nursing_homes.length + 1 }
+          = "Kvalitetsmätning enligt brukare"
+
+      %tr= compare_quality @nursing_homes, :quality_average
+      %tr= compare_quality @nursing_homes, :quality_environment
+      %tr= compare_quality @nursing_homes, :quality_safety
+      %tr= compare_quality @nursing_homes, :quality_consideration
+      %tr= compare_quality @nursing_homes, :quality_food
+      %tr= compare_quality @nursing_homes, :quality_activities
+
+      %tr
+        %th= "Mätning genomförd: "
+        - @nursing_homes.each do |nursing_home|
+          %td{ :class => "item-#{nursing_home.id}" }=  nursing_home.survey_year
+      %tr
+        %td.note{ :colspan => @nursing_homes.length + 1 }
+          = "Siffrorna anger Nöjd-Kund-Index (NKI) i procent."
+
+%ul.actions
+  %li.tiny-button= link_to 'Visa alla boenden', root_path

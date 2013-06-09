@@ -1,0 +1,20 @@
+%form{ :action => root_path, :method => :get, :id => "filter-form" }
+  %div#filter
+    %h2 Filtrera
+    %fieldset
+      .form-row.neighborhood
+        = label_tag :neighborhood, "Stadsområde:"
+        = select :nursing_home, :neighborhood, NursingHome::NEIGHBORHOODS.collect { |val| [val, val ] },
+          { :include_blank => "Alla" }, { :class => "medium", :id => :neighborhood }
+      .form-row.category
+        = label_tag :category, "Typ av boende:"
+        = select :nursing_home, :category, Category.all.map { |c| [ c.short_name, c.id ] },
+          { :include_blank => "Alla" }, { :class => "medium", :id => :category }
+      .form-row.owner-type
+        = label_tag :owner_type, "Organisationsform:"
+        = select :nursing_home, :owner_type, NursingHome::OWNER_TYPES.collect { |key, val| [val, key] },
+            { :include_blank => "Alla" }, { :class => "medium", :id => :owner_type }
+      .form-row.reset
+        = label_tag "reset", "Återställ:"
+        = submit_tag "Återställ", id: "reset", type: "reset", class: "reset"
+      .status= "#{@nursing_homes.length} av #{@nursing_homes.length} boenden visas"
