@@ -1,5 +1,5 @@
 # Nursing Homes
-Nursing Homes, “Hitta & jämför äldreboenden”, is a Ruby on Rails based application that makes it easy for citizens to compare nursing homes.
+Nursing Homes, “Hitta & jämför äldreboenden”, is a Ruby on Rails based application that makes it easy for citizens to compare residential care for elderly.
 
 For more information about the application, contact cwg@malmo.se.
 
