@@ -27,5 +27,5 @@ group :assets do
   gem 'sass-rails', '3.2.6'
 end
 
-# gem 'capistrano', '2.15.4'
-# gem 'capistrano-ext'
+gem 'capistrano', '2.15.4'
+gem 'capistrano-ext', '1.2.1'

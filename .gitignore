@@ -3,6 +3,7 @@
 config/deploy.yml
 config/database.yml
 config/app_config.yml
+config/deploy.yml
 public/assets
 
 *.rbc

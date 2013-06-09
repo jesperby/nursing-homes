@@ -4,51 +4,68 @@ NursingHomes::Application.configure do
   # App root if mounted in a subdir
   config.action_controller.relative_url_root = "/aldreboenden-test"
 
+  # Code is not reloaded between requests
   config.cache_classes = true
+
+  # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-
-  config.log_level = :info
 
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"
 
+  # Compress JavaScripts and CSS
   config.assets.compress = true
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :scss
 
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
+
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  # Log error messages when you accidentally call methods on nil
-  config.whiny_nils = true
+  # Defaults to Rails.root.join("public/assets")
+  # config.assets.manifest = YOUR_PATH
 
-  # Raise exceptions instead of rendering exception templates
-  config.action_dispatch.show_exceptions = false
+  # Specifies the header that your server uses for sending files
+  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
-  # Disable request forgery protection in test environment
-  config.action_controller.allow_forgery_protection    = false
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+  # config.force_ssl = true
 
-  # Tell Action Mailer not to deliver emails to the real world.
-  # The :test delivery method accumulates sent emails in the
-  # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
+  # See everything in the log (default is :info)
+  # config.log_level = :debug
+  config.log_level = :warn
 
-  # Use SQL instead of Active Record's schema dumper when creating the test database.
-  # This is necessary if your schema can't be completely dumped by the schema dumper,
-  # like if you have constraints or database-specific column types
-  # config.active_record.schema_format = :sql
+  # Use a different logger for distributed setups
+  # config.logger = SyslogLogger.new
 
-  # Print deprecation notices to the stderr
-  config.active_support.deprecation = :stderr
+  # Use a different cache store in production
+  # config.cache_store = :mem_cache_store
+
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server
+  # config.action_controller.asset_host = "http://assets.example.com"
+
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  # config.assets.precompile += %w( search.js )
+
+  # Disable delivery errors, bad email addresses will be ignored
+  # config.action_mailer.raise_delivery_errors = false
+
+  # Enable threaded mode
+  # config.threadsafe!
+
+  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+  # the I18n.default_locale when a translation can not be found)
+  config.i18n.fallbacks = true
+
+  # Send deprecation notices to registered listeners
+  config.active_support.deprecation = :notify
 
   # ImageMagick resize. (Use "which convert" path)
   Paperclip.options[:command_path] = "/usr/bin/"
-
-  # Rails 3.2 below
-
-  # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
 
 end
