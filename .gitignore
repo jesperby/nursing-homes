@@ -1,3 +1,10 @@
+.DS_Store
+/doc
+config/deploy.yml
+config/database.yml
+config/app_config.yml
+public/assets
+
 *.rbc
 *.sassc
 .sass-cache
