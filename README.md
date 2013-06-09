@@ -23,6 +23,21 @@ $ rails s
 
 Note: Use only `rake db:schema:load` on an empty database, otherwise use `rake db:migrate`.
 
+## Build and Deployment
+The application is built and deployed using Capistrano. Deployment scripts are included in the source code. To set your deployment configuration:
+
+1. Copy `config/deploy.yml.example` to `config/deploy.yml` and change the settings.
+2. Edit `config/deploy.rb` and the environment files in the `config/deploy/` directory if needed.
+
+Run the deployment script with one of the following command including the environment name:
+
+```
+$ cap staging deploy
+$ cap production deploy
+```
+
+A database backup is performed on the server before deployment. Database migrations and `bundle` are run before the application i restarted.
+
 ## License
 Released under AGPL version 3.
 
