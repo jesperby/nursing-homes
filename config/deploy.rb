@@ -1,5 +1,4 @@
 # The Capistrano tasks will use your **working copy**, compile the assets and deploy them to the server_address
-#   $ cap deploy:setup
 # Execute one of the following to deploy into test or production:
 #   $ cap staging deploy
 #   $ cap production deploy
@@ -42,7 +41,7 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 set(:user) do
-   Capistrano::CLI.ui.ask "\nUsername for #{server_address}: "
+  Capistrano::CLI.ui.ask "\nUsername for #{server_address}: "
 end
 
 before "deploy", "prompt:continue", "assets:precompile_#{precompile_assets}", 'backup:mysql'
