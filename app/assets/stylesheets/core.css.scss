@@ -312,7 +312,7 @@ ul.results {
   .quality {
     clear: both;
     font-size: .929em;
-    margin: 0 0 2em;
+    margin: 0 0 .5em;
     border-top: 1px dotted #c0c0c0;
     .indicator {
       @include clearfix();

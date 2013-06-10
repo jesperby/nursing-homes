@@ -63,6 +63,7 @@
         = quality_indicator @nursing_home, :quality_consideration
         = quality_indicator @nursing_home, :quality_food
         = quality_indicator @nursing_home, :quality_activities
+      %p.note= "Mätning genomförd #{@nursing_home.survey_year}."
 
     %h2 Andra äldreboenden i närheten
     %ul.nearby

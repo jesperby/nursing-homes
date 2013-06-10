@@ -71,9 +71,6 @@
         %th= "Mätning genomförd: "
         - @nursing_homes.each do |nursing_home|
           %td{ :class => "item-#{nursing_home.id}" }=  nursing_home.survey_year
-      %tr
-        %td.note{ :colspan => @nursing_homes.length + 1 }
-          = "Siffrorna anger Nöjd-Kund-Index (NKI) i procent."
 
 %ul.actions
   %li.tiny-button= link_to 'Visa alla boenden', root_path
