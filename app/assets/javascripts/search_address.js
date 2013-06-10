@@ -15,11 +15,11 @@ jQuery(document).ready(function($) {
           success: function( data ) {
             response( $.map( data.addresses, function( item ) {
               return {
-                label: item.name + ", " + item.district,
+                label: item.name + ", " + item.towndistrict,
                 value: item.name,
                 address: item.name,
                 post_code: item.postcode,
-                neighborhood: item.district,
+                neighborhood: item.towndistrict,
                 postal_town: item.postal_town,
                 east: item.east,
                 north: item.north
