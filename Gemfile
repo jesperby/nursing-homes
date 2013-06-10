@@ -23,6 +23,10 @@ group :development do
   gem 'thin'
 end
 
+group  :staging, :test, :production do
+  gem 'dalli', '2.6.4'
+end
+
 group :assets do
   gem 'sass-rails', '3.2.6'
   gem 'therubyracer', '0.11.4', require: 'v8'

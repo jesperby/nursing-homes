@@ -10,6 +10,7 @@ NursingHomes::Application.configure do
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.cache_store = :dalli_store, '127.0.0.1:11211', { namespace: "nursing-homes-production" }
 
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
@@ -42,9 +43,6 @@ NursingHomes::Application.configure do
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
-
-  # Use a different cache store in production
-  # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
