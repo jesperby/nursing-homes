@@ -21,7 +21,7 @@ module NursingHomesHelper
   end
 
   def compare_quality(nursing_homes, param)
-    out = content_tag(:th, t("nursing_home.#{param.to_s}") + ":")
+    out = content_tag(:th, t("nursing_home.#{param.to_s}") + ":", class: "quality")
     nursing_homes.collect do |nursing_home|
       out += content_tag(:td, class: "item-#{nursing_home.id}") do
         quality_indicator_graph(nursing_home.send(param))

@@ -15,12 +15,12 @@
             %th{ :class => "item-#{nursing_home.id}" }= link_to nursing_home.name, nursing_home
       %tbody
         %tr
-          %td
+          %td.first
           - @nursing_homes.each do |nursing_home|
             %td{ :class => "item-#{nursing_home.id}" }
               = image_tag nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name
         %tr
-          %td
+          %td.first
           - @nursing_homes.each do |nursing_home|
             %td{ :class => "item-#{nursing_home.id} remove" }
               .tiny-button.remove{ "data-id" => nursing_home.id }= "Ta bort"

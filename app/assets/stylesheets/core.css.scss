@@ -387,8 +387,6 @@ ul.results {
       background: none;
       font-size: 1.0833em;
     }
-    th {
-    }
     thead th {
       font-size: 1.166em;
       vertical-align: bottom;
@@ -398,9 +396,12 @@ ul.results {
     td.xy {
       border: none;
     }
-    tbody th {
+    thead td.xy,
+    tbody th,
+    tbody td.first {
       padding-right: 1em;
-      width: 15em;
+      width: 15em !important;
+      max-width: 15em !important;
     }
     tr {
       background: none;
