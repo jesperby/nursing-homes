@@ -16,7 +16,7 @@ NursingHomes::Application.configure do
 
   config.assets.compress = true
   config.assets.js_compressor = :uglifier
-  config.assets.css_compressor = :scss
+  # config.assets.css_compressor = :scss
 
   # Generate digests for assets URLs
   config.assets.digest = true

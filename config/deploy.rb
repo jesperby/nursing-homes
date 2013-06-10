@@ -1,4 +1,5 @@
 # The Capistrano tasks will use your **working copy**, compile the assets and deploy them to the server_address
+#   $ cap deploy:setup
 # Execute one of the following to deploy into test or production:
 #   $ cap staging deploy
 #   $ cap production deploy
@@ -30,7 +31,7 @@ set :backup_dir, '/var/www/dump/'
 set :scm, :none
 set :repository, "."
 set :deploy_via, :copy # Use local copy, be sure to update to the stuff you want to deploy
-set :copy_exclude, ["spec", "log/*", "**/.git*", "**/.svn", "tmp/*", "doc", "**/.DS_Store",
+set :copy_exclude, ["public/system", "spec", "log/*", "**/.git*", "**/.svn", "tmp/*", "doc", "**/.DS_Store",
   "**/*.example", "config/database.yml", "config/deploy.yml", "config/app_config.yml",
   ".bundle", ".rspec"]
 

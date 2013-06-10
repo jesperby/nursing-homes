@@ -9,7 +9,7 @@ gem "paperclip", '3.4.2'
 
 gem 'rake', '10.0.4'
 gem 'uglifier', '2.1.1'
-# gem "therubyracer", '0.11.4'
+gem "therubyracer", '0.11.4'
 gem 'cocaine', '0.5.1'
 
 # gem 'net-ldap', '= 0.2.2'
@@ -25,6 +25,7 @@ end
 
 group :assets do
   gem 'sass-rails', '3.2.6'
+  gem 'therubyracer', '0.11.4', require: 'v8'
 end
 
 gem 'capistrano', '2.15.4'
