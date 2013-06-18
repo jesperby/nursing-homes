@@ -9,7 +9,7 @@ For more information about the application, contact cwg@malmo.se.
 * MySQL or PostgreSQL
 * LDAP for authentication
 * ImageMagick
-* Asset files from an [asset host](http://malmo.se/wag)
+* Assets from an [asset host](http://malmo.se/wag)
 * The application is integrated with City of Malmö’s maps service, both for displaying objects on a map and for address lookup when adding and editing objects.
 
 ## Setup
