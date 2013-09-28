@@ -63,9 +63,9 @@ class ApplicationController < ActionController::Base
         if !@masthead.blank?
           write_fragment('masthead', @masthead, :expires_in => 6.hours)
         end
-      rescue
+      rescue Exception => e
         @masthead = "<!-- Couldn't fetch remote masthead-->"
-        logger.warn "#{Time.now} Failed fetching masthead"
+        logger.error "#{Time.now} Failed fetching masthead: #{e}"
       end
     end
   end
