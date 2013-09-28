@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.13'
-gem 'mysql2', '0.3.11'
+gem 'rails', '3.2.14'
+gem 'mysql2', '0.3.13'
 
 # gem 'jquery-rails' # We use rails.js 1.4 to be compatible with Malmö Assets 2.0's jQuery 1.4
 gem 'haml', '4.0.3'
