@@ -7,7 +7,6 @@ gem 'mysql2', '0.3.13'
 gem 'haml', '4.0.3'
 gem "paperclip", '3.4.2'
 
-gem 'rake', '10.0.4'
 gem 'uglifier', '2.1.1'
 gem "therubyracer", '0.11.4'
 gem 'cocaine', '0.5.1'
