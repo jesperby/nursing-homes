@@ -13,14 +13,14 @@
     .description
       = raw sanitize @nursing_home.description, tags: %w(h2 p)
     / eri-no-index
-    #slideshow.clearfix
-      %ul.controls.clearfix
-        %li.prev Föregående
-        %li.next Nästa
-        %li.count
-      .images.clearfix
-        - @nursing_home.images.each do |img|
-          = image_tag img.image.url(:medium), :alt => @nursing_home.name
+    / #slideshow.clearfix
+    /   %ul.controls.clearfix
+    /     %li.prev Föregående
+    /     %li.next Nästa
+    /     %li.count
+    /   .images.clearfix
+    /     - @nursing_home.images.each do |img|
+    /       = image_tag img.image.url(:medium), :alt => @nursing_home.name
     .compare-check
       = check_box_tag "compare-#{@nursing_home.id}", @nursing_home.id, false, "data-compare" => @nursing_home.id
       = label_tag "compare-#{@nursing_home.id}", "Lägg till i Min lista"
@@ -80,7 +80,6 @@
 
     %p.note.updated= "Informationen om äldreboendet uppdaterades #{ @nursing_home.updated_at.strftime('%Y-%m-%d') }."
 
-
 %ul.actions
   %li.tiny-button= link_to 'Visa alla boenden', root_path
 
@@ -90,5 +89,4 @@
       %li.tiny-button= link_to 'Redigera', edit_nursing_home_path(@nursing_home)
       %li.tiny-button= link_to 'Ta bort', nursing_home_path(@nursing_home), confirm: 'Vill du ta bort äldreboendet?', :method => :delete
 
-= content_for :travel do
-  = render 'layouts/travel-box'
+= render 'layouts/travel-box'

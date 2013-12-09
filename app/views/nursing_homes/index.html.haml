@@ -29,8 +29,8 @@
                   - nursing_home.categories.each do |c|
                     %dd.category= c.name
               %p.description= truncate(strip_tags( nursing_home.description ), :length => 200)
-            - unless nursing_home.images.blank?
-              .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
+            / - unless nursing_home.images.blank?
+            /   .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
     #tab-element-map.clearfix
 - if current_user
   #additional-bottom-index
