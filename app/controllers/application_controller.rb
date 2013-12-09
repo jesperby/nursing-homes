@@ -4,7 +4,7 @@ require "open-uri"
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :get_masthead, :init_body_class, :except => [ :api_index, :api_show ]
+  before_filter :init_body_class, :except => [ :api_index, :api_show ]
   before_filter :protected_mode if Rails.env.test? || Rails.env.staging?
 
   private
@@ -50,22 +50,5 @@ class ApplicationController < ActionController::Base
     @body_classes ||= ""
     @body_classes << " user" if current_user
     @body_classes << " #{name}"
-  end
-
-  def get_masthead
-    # fetch and cache masthead
-    if fragment_exist? 'masthead'
-      @masthead = read_fragment('masthead')
-    else
-      begin
-        @masthead = open("https://www.malmo.se/assets-2.0/remote/external-masthead/?node=medborgare").read.strip
-        if !@masthead.blank?
-          write_fragment('masthead', @masthead, :expires_in => 6.hours)
-        end
-      rescue Exception => e
-        @masthead = "<!-- Couldn't fetch remote masthead-->"
-        logger.error "#{Time.now} Failed fetching masthead: #{e}"
-      end
-    end
   end
 end
