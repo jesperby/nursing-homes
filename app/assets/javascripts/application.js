@@ -6,6 +6,3 @@
 //
 //= require_tree .
 //= require json2.js
-// We need to use rails.js 1.4 to be compatible with Malmö Assets 2.0's jQuery 1.4
-//= require rails
-
