@@ -1,9 +1,6 @@
 NursingHomes::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-  # App root if mounted in a subdir
-  config.action_controller.relative_url_root = "/aldreboenden"
-
   # Code is not reloaded between requests
   config.cache_classes = true
 
