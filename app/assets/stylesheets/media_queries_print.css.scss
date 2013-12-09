@@ -1,0 +1,61 @@
+@media print {
+  body {
+    width: 90%;
+    margin: 0 auto;
+    background: none !important;
+  }
+  #user-menu,
+  #compare-box,
+  #travel-box,
+  .actions,
+  .compare-check,
+  .tiny-button,
+  .map,
+  .url,
+  input {
+    display: none !important;
+  }
+  .application {
+    margin: 0 !important;
+  }
+  .record {
+    .description {
+      width: 60%;
+    }
+    #slideshow {
+      position: static !important;
+      width: 38% !important;
+      height: auto !important;
+      .controls {
+        display: none !important;
+      }
+      .images {
+        position: static !important;
+        height: auto !important;
+        width: auto !important;
+        box-sizing: border-box;
+        img {
+          box-sizing: border-box;
+          position: static !important;
+          display: block !important;
+          @include opacity(1);
+          width: 100% !important;
+          height: auto !important;
+          margin: 0 0 1em !important;
+        }
+      }
+    }
+    .note.updated {
+      margin-bottom: 0;
+    }
+    .graph {
+      border: none;
+    }
+  }
+  .columns-2 .content-wrapper-6, .columns-3 .content-wrapper-6 {
+      min-height: none;
+  }
+  #filter {
+    display: none;
+  }
+}

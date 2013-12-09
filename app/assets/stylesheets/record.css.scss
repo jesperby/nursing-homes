@@ -1,0 +1,125 @@
+/* Show view */
+.record {
+  h2 {
+    margin: .8em 0 .2em;
+  }
+  .description {
+    float: left;
+    width: 54%;
+    margin-bottom: 1em;
+  }
+  #slideshow {
+    float: right;
+    width: 300px;
+    margin: .3em 0 1em;
+    .images {
+      img {
+        width: 300px;
+        height: 200px;
+      }
+    }
+    ul.controls {
+      display: none;
+      background: #333;
+      color: #fff;
+      padding: .4em .5em .45em;
+      font-size: .857em;
+      li.prev, li.next {
+        float: left;
+        cursor: pointer;
+      }
+      li.prev {
+        margin-right: 1.5em;
+      }
+      li.count {
+        float: right;
+      }
+    }
+  }
+  .show-on-map.tiny-button {
+    float: right;
+    clear: right;
+    margin: 1em 0 2em;
+    white-space: nowrap;
+  }
+  .compare-check {
+    float: right;
+    clear: right;
+    margin: 0;
+    white-space: nowrap;
+    input {
+      margin: 2px 3px 0 0;
+      padding: 0;
+    }
+    label {
+      font-size: .929em;
+    }
+  }
+
+  dl.details {
+    clear: both;
+    font-size: .929em;
+    margin: 0 0 2em;
+    border-bottom: 1px dotted #C0C0C0;
+    dt {
+      border-top: 1px dotted #C0C0C0;
+      clear: both;
+      float: left;
+      line-height: 1.3em;
+      min-height: 1.3em;
+      padding: 0.4em 0 0;
+      width: 12em;
+    }
+    dd {
+      border-top: 1px dotted #C0C0C0;
+      line-height: 1.3em;
+      min-height: 1.3em;
+      margin: 0 0 0.4em 12em;
+      padding: 0.4em 0 0;
+      p {
+        font-family: $sansSerif;
+        margin: 0;
+      }
+    }
+  }
+
+  .quality {
+    clear: both;
+    font-size: .929em;
+    margin: 0 0 .5em;
+    border-top: 1px dotted #c0c0c0;
+    .indicator {
+      @include clearfix();
+      border-bottom: 1px dotted #c0c0c0;
+      padding: .5em 0;
+      .label {
+        float: left;
+        width: 80%;
+      }
+      .value {
+        float: right;
+      }
+      .no-value {
+
+      }
+    }
+  }
+
+  .note {
+    font-family: $sansSerif;
+    font-size: .929em;
+    margin: .3em 0 2em;
+  }
+  .note.updated {
+    margin-bottom: 1.5em;
+  }
+
+  ul.nearby, ul.attachments  {
+    font-size: .929em;
+    margin: 0em 0 1em;
+  }
+
+  h2 {
+    clear: both;
+  }
+}

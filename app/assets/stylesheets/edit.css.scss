@@ -63,12 +63,12 @@
       line-height: 1.4em;
     }
     .form-row .small textarea {
-      font-family: $sans;
+      font-family: $sansSerif;
       line-height: 1.3em;
     }
 
     .form-row .instruction {
-      font-family: $sans;
+      font-family: $sansSerif;
       font-size: 0.925em;
       margin: .4em 0 .2em 12em;
       color: #333;
@@ -96,7 +96,7 @@
         margin: 0 11em 0em;
         .attachements-field {
           width: 33em;
-          margin-bottom: 0 !important;
+          margin-bottom: 0;
         }
         .check-radio {
             margin-bottom: 1.5em;
@@ -127,7 +127,7 @@
           }
           .destroy {
             label, input {
-              font-family: $sans;
+              font-family: $sansSerif;
               font-size: .875em;
               float: none;
               display: inline;
@@ -189,7 +189,7 @@
     padding: .2em .5em;
     width: 11.8em;
     text-align: center;
-    font-family: $sans;
+    font-family: $sansSerif;
     font-size: .929em;
     &.ok {
       border: 1px solid #ACDFA7;

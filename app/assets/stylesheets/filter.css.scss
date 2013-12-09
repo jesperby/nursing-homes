@@ -1,0 +1,48 @@
+#filter {
+  padding: .2em;
+  border: 1px solid #c0c0c0;
+  margin-bottom: .5em;
+  @include radius(3px);
+  h2 {
+    padding: .2em .5em .25em;
+    margin-bottom: .6em;
+    background: #D9EBD2;
+    font-size: 1em;
+  }
+  fieldset {
+    border: none;
+    margin: 0 .5em 1em;
+    padding: 0;
+    font-size: .929em;
+    .form-row.neighborhood,
+    .form-row.category,
+    .form-row.owner-type,
+    .form-row.reset {
+      float: left;
+      margin-bottom: .5em;
+      label {
+        margin-bottom: .2em;
+      }
+      select {
+        width: 170px;
+        margin: 0 1em .5em 0;
+      }
+    }
+    .form-row.reset {
+      label {
+        visibility:hidden;
+        margin-bottom: 1px;
+      }
+    }
+    .form-row.neighborhood {
+      clear: left;
+    }
+    .status {
+      clear: left;
+    }
+    input.reset {
+      display: none;
+      margin: 0;
+    }
+  }
+}

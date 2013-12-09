@@ -1,0 +1,70 @@
+/* Results list */
+ul.results {
+  @include radius(3px);
+  li {
+    margin-bottom: 1em;
+    a {
+      @include radius(3px);
+    }
+    &.active a {
+      color: #000;
+    }
+  }
+  .summary {
+    float: right;
+    width: 75%;
+    .basic-data {
+      padding: .3em .5em .5em;
+      background: #f2f2f2;
+      border-top: #c0c0c0 solid 1px;
+      margin-bottom: .5em;
+      a {
+        color: #007133;
+      }
+      h2 {
+        margin-bottom: .15em;
+        font-size: 1em;
+      }
+      dl {
+        margin: 0;
+        dt {
+          clear: left;
+          float: left;
+          width: 8em;
+        }
+        dd {
+          margin-left: 8em;
+        }
+      }
+      .neighborhood, .owner-type, .category, .show {
+        font-size: .844em;
+        line-height: 1.4em;
+      }
+    }
+
+    p {
+      margin-bottom: .5em;
+      font-size: .909em;
+    }
+    .compare-check {
+      float: right;
+      margin: .4em .7em 0;
+      input {
+        margin: 3px 0 0;
+        padding: 0;
+      }
+      label {
+        font-size: .844em;
+        margin-left: 0;
+      }
+    }
+  }
+  .image {
+    float: left;
+    width: 22%;
+    img {
+      width: 100%;
+      border: 1px solid #999;
+    }
+  }
+}
