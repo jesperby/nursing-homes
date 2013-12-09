@@ -14,7 +14,6 @@ gem 'net-ldap', '0.3.1' # There is a bug in net-ldap v.0.3.1: https://github.com
 gem 'bcrypt-ruby', '3.1.2'
 
 group :development do
-  gem 'sqlite3'
   gem 'haml-rails'
   gem 'quiet_assets'
   gem 'thin'
