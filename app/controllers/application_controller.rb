@@ -42,8 +42,7 @@ class ApplicationController < ActionController::Base
 
   # Add visual cue for non-prod environments
   def init_body_class
-    add_body_class("dev-env") if Rails.env.development?
-    add_body_class("test-env") if  Rails.env.test? || Rails.env.staging?
+    add_body_class(Rails.env)
   end
 
   # Adds classnames to the body tag
