@@ -4,11 +4,12 @@ Nursing Homes, “Hitta & jämför äldreboenden”, is a Ruby on Rails based ap
 For more information about the application, contact cwg@malmo.se.
 
 ## Dependencies
-* Ruby >=1.9.3
-* Ruby on Rails >=3.2
+* Ruby 1.9.3 or 2.0
+* Ruby on Rails 3.2
 * MySQL or PostgreSQL
 * LDAP for authentication
 * ImageMagick
+* Memcached
 * Assets from an [asset host](http://malmo.se/wag)
 * The application is integrated with City of Malmö’s maps service, both for displaying objects on a map and for address lookup when adding and editing objects.
 
@@ -41,4 +42,4 @@ A database backup is performed on the server before deployment. Database migrati
 ## License
 Released under AGPL version 3.
 
-The `vendor` and `public/ckeditor` directories contains third party code that may be released under other licenses stated in the start of each file or separate license files.
+The `public/ckeditor` directory contains third party code that may be released under other licenses stated in the start of each file or separate license files.
