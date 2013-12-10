@@ -34,7 +34,7 @@
           %li.logout= link_to "Logga ut", logout_path
 
       - unless params[:controller] == "nursing_homes" && params[:action] == "compare"
-        .aside
+        %aside
           = render 'layouts/contact-box'
           - cache "compare-box" do
             = render 'layouts/compare-box'
