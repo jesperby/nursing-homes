@@ -1,14 +1,6 @@
-/ OMG
-#compare-box.clearfix
-  .content-wrapper
-    .content-wrapper-1
-      .content-wrapper-2
-        .content-wrapper-3
-          .content-wrapper-4
-            .content-wrapper-5
-              .content-wrapper-6
-                %h2 Min lista
-                %p.status
-                .status-list
-                %p.how-to= 'Kryssa i "Visa i Min lista" intill ett boende för att lägga till det till din jämförelselista.'
-                .tiny-button= link_to "Jämför", compare_nursing_homes_path
+#compare-box
+  %h2 Min lista
+  %p.status
+  .status-list
+  %p.how-to= 'Kryssa i "Visa i Min lista" intill ett boende för att lägga till det till din jämförelselista.'
+  = link_to "Jämför", compare_nursing_homes_path, class: "btn"

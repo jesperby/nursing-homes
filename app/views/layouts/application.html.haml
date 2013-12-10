@@ -15,6 +15,12 @@
     = csrf_meta_tag
   %body{ class: "#{@body_classes} malmo-form nursing-homes" }
     .wrapper
+      /eri-desc
+      %ol.breadcrumbs
+        %li.home= link_to 'malmo.se','http://www.malmo.se/'
+        %li= link_to 'Hitta & jämför äldreboenden', root_path
+      //eri-desc
+
       - flash.each do |key, value|
         %p{ class: "flash #{key}" }= value
 
