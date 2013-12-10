@@ -1,10 +1,10 @@
 / eri-no-index
-#contact-box
-  %h2 Kontakta oss
+%section#contact-box
+  %h1 Kontakta oss
   - if contact_data.blank?
     %p
       = t("contact_more_information")
-      = link_to "Läs mer", t("contact_more_information_link"), class: "btn"
+      = link_to "Läs mer", t("contact_more_information_link")
   - else
     %dl
       %dt.name= contact_data['name'] or "Nytt äldreboende"
@@ -26,6 +26,5 @@
         %dd.url= link_to "Webbplats", contact_data['url']
       %dd.more-information= link_to "Hur ansöker jag?", contact_data['more_information_link'] unless contact_data['name']
 
-    %p
-      = link_to "Hur ansöker jag?", "http://www.malmo.se/ansokanomaldreboenden", class: "btn"
+    = link_to "Hur ansöker jag?", "http://www.malmo.se/ansokanomaldreboenden", class: "btn"
 //eri-no-index
