@@ -54,10 +54,10 @@ jQuery(document).ready(function($) {
           )
         );
       });
-      $("#compare-box .tiny-button").show();
+      $("#compare-box .compare").show();
       $("#compare-box .how-to").hide();
     } else {
-      $("#compare-box .tiny-button").hide();
+      $("#compare-box .compare").hide();
       $("#compare-box .how-to").show();
     }
   };

@@ -1,7 +1,7 @@
 - if current_user
   #additional-top-index
     %ul.actions
-      %li.tiny-button= link_to 'Skapa nytt äldreboende', new_nursing_home_path
+      %li= link_to 'Skapa nytt äldreboende', new_nursing_home_path, class: "btn"
 - cache do
   %h1= "Hitta & jämför äldreboenden "
   = render 'filter'
@@ -35,4 +35,4 @@
 - if current_user
   #additional-bottom-index
     %ul.actions
-      %li.tiny-button= link_to 'Skapa nytt äldreboende', new_nursing_home_path
+      %li= link_to 'Skapa nytt äldreboende', new_nursing_home_path, class: "btn"

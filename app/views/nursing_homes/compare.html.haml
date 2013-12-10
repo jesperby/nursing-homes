@@ -1,5 +1,5 @@
 %ul.actions
-  %li.tiny-button= link_to 'Visa alla boenden', root_path
+  %li= link_to 'Visa alla boenden', root_path, class: "btn"
 
 %h1 Jämför äldreboenden
 #compare
@@ -23,7 +23,7 @@
           %td.first
           - @nursing_homes.each do |nursing_home|
             %td{ :class => "item-#{nursing_home.id} remove" }
-              .tiny-button.remove{ "data-id" => nursing_home.id }= "Ta bort"
+              .remove.btn{ "data-id" => nursing_home.id }= "Ta bort"
         %tr
           %th Adress:
           - @nursing_homes.each do |nursing_home|
@@ -73,4 +73,4 @@
           %td{ :class => "item-#{nursing_home.id}" }=  nursing_home.survey_year
 
 %ul.actions
-  %li.tiny-button= link_to 'Visa alla boenden', root_path
+  %li= link_to 'Visa alla boenden', root_path, class: "btn"

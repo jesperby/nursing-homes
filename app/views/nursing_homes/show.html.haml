@@ -1,11 +1,11 @@
 %ul.actions
-  %li.tiny-button= link_to 'Visa alla boenden', root_path
+  %li= link_to 'Visa alla boenden', root_path, class: "btn"
 
 - if current_user
   #additional-bottom-show
     %ul.actions
-      %li.tiny-button= link_to 'Redigera', edit_nursing_home_path(@nursing_home)
-      %li.tiny-button= link_to 'Ta bort', nursing_home_path(@nursing_home), confirm: 'Vill du ta bort äldreboendet?', :method => :delete
+      %l= link_to 'Redigera', edit_nursing_home_path(@nursing_home), class: "btn"
+      %li= link_to 'Ta bort', nursing_home_path(@nursing_home), confirm: 'Vill du ta bort äldreboendet?', :method => :delete, , class: "btn btn-danger"
 
 - cache @nursing_home do
   %h1= @nursing_home.name
@@ -24,7 +24,7 @@
     .compare-check
       = check_box_tag "compare-#{@nursing_home.id}", @nursing_home.id, false, "data-compare" => @nursing_home.id
       = label_tag "compare-#{@nursing_home.id}", "Lägg till i Min lista"
-    .show-on-map.tiny-button= link_to "Visa på karta", "http://www.malmo.se/karta?poi=#{u(@nursing_home.address)}&center=#{@nursing_home.geo_position_x},#{@nursing_home.geo_position_y}&zoomlevel=4&maptype=karta", :title => @nursing_home.address, :id => "show-address-on-map"
+    .show-on-map= link_to "Visa på karta", "http://www.malmo.se/karta?poi=#{u(@nursing_home.address)}&center=#{@nursing_home.geo_position_x},#{@nursing_home.geo_position_y}&zoomlevel=4&maptype=karta", :title => @nursing_home.address, :id => "show-address-on-map", class: "btn"
     //eri-no-index
 
     %dl.details
@@ -81,10 +81,10 @@
     %p.note.updated= "Informationen om äldreboendet uppdaterades #{ @nursing_home.updated_at.strftime('%Y-%m-%d') }."
 
 %ul.actions
-  %li.tiny-button= link_to 'Visa alla boenden', root_path
+  %li= link_to 'Visa alla boenden', root_path, class: "btn"
 
 - if current_user
   #additional-bottom-show
     %ul.actions
-      %li.tiny-button= link_to 'Redigera', edit_nursing_home_path(@nursing_home)
-      %li.tiny-button= link_to 'Ta bort', nursing_home_path(@nursing_home), confirm: 'Vill du ta bort äldreboendet?', :method => :delete
+      %li= link_to 'Redigera', edit_nursing_home_path(@nursing_home), class: "btn"
+      %li= link_to 'Ta bort', nursing_home_path(@nursing_home), confirm: 'Vill du ta bort äldreboendet?', :method => :delete, class: "btn btn-danger"
