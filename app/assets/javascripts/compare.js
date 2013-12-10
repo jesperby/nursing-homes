@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
   };
 
   // Remove in the compare box
-  $("#compare-box .status-list li .remove").live('click', function() {
+  $("#compare-box .status-list li .remove").on('click', function() {
     removeItem( $(this).attr('data-id') );
     checkTheBoxes();
   });
