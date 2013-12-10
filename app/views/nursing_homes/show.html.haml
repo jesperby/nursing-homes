@@ -9,7 +9,7 @@
 
 - cache @nursing_home do
   %h1= @nursing_home.name
-  .record{ class: ("drafted" if @nursing_home.draft) }
+  .show{ class: ("drafted" if @nursing_home.draft) }
     .description
       = raw sanitize @nursing_home.description, tags: %w(h2 p)
     / eri-no-index
