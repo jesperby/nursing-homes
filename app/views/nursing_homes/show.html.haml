@@ -8,8 +8,8 @@
       %li= link_to 'Ta bort', nursing_home_path(@nursing_home), confirm: 'Vill du ta bort äldreboendet?', method: :delete, class: "btn btn-danger"
 
 - cache @nursing_home do
-  %h1= @nursing_home.name
-  .show{ class: ("drafted" if @nursing_home.draft) }
+  .show.body-copy{ class: ("drafted" if @nursing_home.draft) }
+    %h1= @nursing_home.name
     .description
       = raw sanitize @nursing_home.description, tags: %w(h2 p)
     / eri-no-index

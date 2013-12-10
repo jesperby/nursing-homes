@@ -2,6 +2,7 @@
 .show {
   h2 {
     margin: .8em 0 .2em;
+    clear: both;
   }
   .description {
     float: left;
@@ -117,9 +118,5 @@
   ul.nearby, ul.attachments  {
     font-size: .929em;
     margin: 0em 0 1em;
-  }
-
-  h2 {
-    clear: both;
   }
 }
