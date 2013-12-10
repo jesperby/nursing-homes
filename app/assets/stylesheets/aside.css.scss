@@ -29,7 +29,7 @@
   }
 }
 
-#compare-box, #travel-box {
+#compare-box {
   padding: 0;
   margin-bottom: 1em;
   .content-wrapper {
@@ -82,14 +82,5 @@
         }
       }
     }
-  }
-}
-#travel-box {
-  .travel {
-    padding: .7em .4em .7em .9em;
-  }
-  img {
-    display: block;
-    margin-bottom: 1em;
   }
 }

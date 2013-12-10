@@ -1,10 +1,15 @@
-body.nursing-homes.compare {
-  .wrap-all {
-    width: 100%;
-  }
-  .columns-2 .content-wrapper, .columns-3 .content-wrapper {
-    width: 100%;
-  }
+body {
+  padding: 0 .5em;
+  min-width: 56em;
+  margin-top: 0;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.wrapper {
+  max-width: 56em;
+  margin: 2em auto 0;
+  @include clearfix();
 }
 
 .main-content-nursing_homes {

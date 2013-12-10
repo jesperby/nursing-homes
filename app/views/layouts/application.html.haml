@@ -33,5 +33,11 @@
           - cache "compare-box" do
             = render 'layouts/compare-box'
 
+    %script
+      = "var CKEDITOR_BASEPATH = '#{root_path}ckeditor/';"
+      = "var appPath = '#{root_path}';"
+      = "var nursingHomePath = '#{nursing_homes_path}/';"
+      = "var apiPath = '#{api_nursing_homes_path}/';"
+      = "var mapUrl = '#{APP_CONFIG['map_url']}';"
     = javascript_include_tag "#{APP_CONFIG['assets_url_base']}malmo.js"
     = javascript_include_tag "application"
