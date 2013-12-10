@@ -16,6 +16,9 @@ body {
   @include clearfix();
 }
 
+.breadcrumbs {
+  margin-bottom: 1.5em;
+}
 
 ul, ol {
   list-style: none;

@@ -1,8 +1,6 @@
 /* Show view */
 .show {
   h2 {
-    margin: .8em 0 .2em;
-    clear: both;
   }
   .description {
     float: left;
@@ -59,11 +57,12 @@
 
   dl.details {
     clear: both;
-    font-size: .929em;
+    font-family: $sansSerif;
+    font-size: emize(13);
     margin: 0 0 2em;
-    border-bottom: 1px dotted #C0C0C0;
+    border-bottom: $border;
     dt {
-      border-top: 1px dotted #C0C0C0;
+      border-top: $border;
       clear: both;
       float: left;
       line-height: 1.3em;
@@ -72,13 +71,12 @@
       width: 12em;
     }
     dd {
-      border-top: 1px dotted #C0C0C0;
+      border-top: $border;
       line-height: 1.3em;
       min-height: 1.3em;
       margin: 0 0 0.4em 12em;
       padding: 0.4em 0 0;
       p {
-        font-family: $sansSerif;
         margin: 0;
       }
     }
@@ -86,12 +84,13 @@
 
   .quality {
     clear: both;
-    font-size: .929em;
+    font-family: $sansSerif;
+    font-size: emize(13);
     margin: 0 0 .5em;
-    border-top: 1px dotted #c0c0c0;
+    border-top: $border;
     .indicator {
       @include clearfix();
-      border-bottom: 1px dotted #c0c0c0;
+      border-bottom: $border;
       padding: .5em 0;
       .label {
         float: left;
@@ -108,7 +107,7 @@
 
   .note {
     font-family: $sansSerif;
-    font-size: .929em;
+    font-size: emize(13);
     margin: .3em 0 2em;
   }
   .note.updated {
