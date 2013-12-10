@@ -6,32 +6,29 @@
   %h1= "Hitta & jämför äldreboenden "
   = render 'filter'
 
-  %div#tab-element-container
-    %ul.results.clearfix
-      %li.active= link_to "Översikt", '#tab-element-list'
-      %li= link_to "Visa på karta", '#tab-element-map'
+  %ul.switch-view
+    %li.active= link_to "Översikt", '#tab-element-list'
+    %li= link_to "Visa på karta", '#tab-element-map'
 
-    #tab-element-list
-      %ul.results.clearfix
-        - @nursing_homes.each do |nursing_home|
-          %li.clearfix{ data_dashes(nursing_home), class: ("drafted" if nursing_home.draft) }
-            .summary
-              .compare-check
-                = check_box_tag "compare-#{nursing_home.id}", nursing_home.id, false, "data-compare" => nursing_home.id
-                = label_tag "compare-#{nursing_home.id}", "Lägg till i Min lista"
+  %ul.results.main
+    - @nursing_homes.each do |nursing_home|
+      %li{ data_dashes(nursing_home), class: ("drafted" if nursing_home.draft) }
+        .summary
+          .compare-check
+            = check_box_tag "compare-#{nursing_home.id}", nursing_home.id, false, "data-compare" => nursing_home.id
+            = label_tag "compare-#{nursing_home.id}", "Lägg till i Min lista"
 
-              .basic-data
-                %h2= link_to nursing_home.name, nursing_home
-                %dl
-                  %dt.neighborhood= "Stadsområde:"
-                  %dd.neighborhood= nursing_home.neighborhood
-                  %dt.category= "Typ av boende: "
-                  - nursing_home.categories.each do |c|
-                    %dd.category= c.name
-              %p.description= truncate(strip_tags( nursing_home.description ), :length => 200)
-            / - unless nursing_home.images.blank?
-            /   .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
-    #tab-element-map.clearfix
+          .basic-data
+            %h2= link_to nursing_home.name, nursing_home
+            %dl
+              %dt.neighborhood= "Stadsområde:"
+              %dd.neighborhood= nursing_home.neighborhood
+              %dt.category= "Typ av boende: "
+              - nursing_home.categories.each do |c|
+                %dd.category= c.name
+          %p.description= truncate(strip_tags( nursing_home.description ), :length => 200)
+        / - unless nursing_home.images.blank?
+        /   .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
 - if current_user
   #additional-bottom-index
     %ul.actions
