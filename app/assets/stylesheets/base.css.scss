@@ -10,6 +10,13 @@ ul, ol, li {
   padding: 0;
 }
 
+h1.title {
+  font-weight: normal;
+  font-size: emize(32, 16);
+  line-height: 1.1;
+  margin: .1em 0 .3em;
+}
+
 .body-copy h2 {
   margin-top: 1em;
 }
@@ -39,17 +46,9 @@ ul, ol, li {
   clear: both;
 }
 
-#additional-bottom-show,
-#additional-bottom-index,
-#additional-top-index {
+.new {
   float: right;
-}
-
-#additional-top-index ul {
-  margin-top: .25em;
-  li {
-    margin: 0;
-  }
+  clear: left;
 }
 
 ul#user-menu {
