@@ -12,21 +12,17 @@
     %ul.results
       - @nursing_homes.each do |nursing_home|
         %li{ data_dashes(nursing_home), class: ("drafted" if nursing_home.draft) }
+          - unless nursing_home.images.blank?
+            .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
           .summary
             .compare-check
               = check_box_tag "compare-#{nursing_home.id}", nursing_home.id, false, "data-compare" => nursing_home.id
               = label_tag "compare-#{nursing_home.id}", "Lägg till i Min lista"
 
-            .basic-data
-              %h2= link_to nursing_home.name, nursing_home
-              %dl
-                %dt.neighborhood= "Stadsområde:"
-                %dd.neighborhood= nursing_home.neighborhood
-                %dt.category= "Typ av boende: "
-                - nursing_home.categories.each do |c|
-                  %dd.category= c.name
+            %h2= link_to nursing_home.name, nursing_home
+            %p.neighborhood= nursing_home.neighborhood
+            - nursing_home.categories.each do |c|
+              %p.owner-type= c.name
             %p.description= truncate(strip_tags( nursing_home.description ), :length => 200)
-          - unless nursing_home.images.blank?
-            .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
   - if current_user
     = link_to 'Nytt äldreboende', new_nursing_home_path, class: "btn btn-small btn-primary new"
