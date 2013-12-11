@@ -21,8 +21,7 @@
 
             %h2= link_to nursing_home.name, nursing_home
             %p.neighborhood= nursing_home.neighborhood
-            - nursing_home.categories.each do |c|
-              %p.owner-type= c.name
+            %p.owner-type= nursing_home.categories.map(&:name).to_sentence
             %p.description= truncate(strip_tags( nursing_home.description ), :length => 200)
   - if current_user
     = link_to 'Nytt äldreboende', new_nursing_home_path, class: "btn btn-small btn-primary new"
