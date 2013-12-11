@@ -16,18 +16,18 @@
     = csrf_meta_tag
   %body{ class: "#{@body_classes} malmo-form nursing-homes" }
     .wrapper
+      - if current_user
+        %ul#user-menu
+          %li.displayname= "#{current_user.displayname}"
+          - if current_user.is_admin
+            %li.users= link_to 'Användare', users_path
+          %li.logout= link_to "Logga ut", logout_path
+
       /eri-desc
       %ol.breadcrumbs
         %li.home= link_to 'malmo.se','http://www.malmo.se/'
         %li= link_to 'Hitta & jämför äldreboenden', root_path
       //eri-desc
-
-      - if current_user
-        %ul#user-menu
-          %li.displayname= "Inloggad som #{current_user.displayname}"
-          - if current_user.is_admin
-            %li.users= link_to 'Hantera användare', users_path
-          %li.logout= link_to "Logga ut", logout_path
 
       - flash.each do |key, value|
         %p{ class: "flash #{key}" }= value

@@ -54,10 +54,14 @@ ul, ol, li {
 
 ul#user-menu {
   float: right;
+  margin-top: .3em;
   li {
     font-size: emize(13);
+    font-family: $sansSerif;
     line-height: 1.3;
     text-align: right;
+    display: inline-block;
+    margin-left: 1em;
   }
 }
 
