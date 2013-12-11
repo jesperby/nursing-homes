@@ -21,7 +21,7 @@
       background: #333;
       color: #fff;
       padding: .4em .5em .45em;
-      font-size: .857em;
+      font-size: emize(11);
       li.prev, li.next {
         float: left;
         cursor: pointer;
@@ -50,7 +50,9 @@
       padding: 0;
     }
     label {
-      font-size: .929em;
+      display: inline;
+      font-size: emize(13);
+      font-family: $sansSerif;
     }
   }
 
@@ -115,7 +117,7 @@
   }
 
   ul.nearby, ul.attachments  {
-    font-size: .929em;
+    font-size: emize(14);
     margin: 0em 0 1em;
   }
 }

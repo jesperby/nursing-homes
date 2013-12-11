@@ -37,14 +37,13 @@ ul.results {
         }
       }
       .neighborhood, .owner-type, .category, .show {
-        font-size: .844em;
-        line-height: 1.4em;
+        font-size: emize(13);
+        line-height: 1.3;
       }
     }
 
     p {
       margin-bottom: .5em;
-      font-size: .909em;
     }
     .compare-check {
       float: right;
@@ -54,7 +53,7 @@ ul.results {
         padding: 0;
       }
       label {
-        font-size: .844em;
+        font-size: emize(13);
         margin-left: 0;
       }
     }

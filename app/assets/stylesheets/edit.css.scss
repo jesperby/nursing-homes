@@ -69,7 +69,7 @@
 
     .form-row .instruction {
       font-family: $sansSerif;
-      font-size: 0.925em;
+      font-size: emize(13);
       margin: .4em 0 .2em 12em;
       color: #333;
     }
@@ -128,7 +128,6 @@
           .destroy {
             label, input {
               font-family: $sansSerif;
-              font-size: .875em;
               float: none;
               display: inline;
               width: auto;
@@ -190,7 +189,7 @@
     width: 11.8em;
     text-align: center;
     font-family: $sansSerif;
-    font-size: .929em;
+    font-size: emize(13);
     &.ok {
       border: 1px solid #ACDFA7;
       background: #EAFFE0;

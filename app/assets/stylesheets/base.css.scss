@@ -10,6 +10,10 @@ ul, ol, li {
   padding: 0;
 }
 
+.body-copy h2 {
+  margin-top: 1em;
+}
+
 .graph {
   width: 100px;
   border: 1px solid #ccc;
@@ -26,8 +30,13 @@ ul, ol, li {
   float: right;
   font-size: emize(13);
   li {
+    float: right;
     margin-left: .4em;
   }
+}
+
+.actions.bottom {
+  clear: both;
 }
 
 #additional-bottom-show,

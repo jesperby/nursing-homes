@@ -22,17 +22,17 @@
         %li= link_to 'Hitta & jämför äldreboenden', root_path
       //eri-desc
 
-      - flash.each do |key, value|
-        %p{ class: "flash #{key}" }= value
-
-      = yield
-
       - if current_user
         %ul#user-menu
           %li.displayname= "Inloggad som #{current_user.displayname}"
           - if current_user.is_admin
             %li.users= link_to 'Hantera användare', users_path
           %li.logout= link_to "Logga ut", logout_path
+
+      - flash.each do |key, value|
+        %p{ class: "flash #{key}" }= value
+
+      = yield
 
       - unless params[:controller] == "nursing_homes" && params[:action] == "compare"
         %aside
