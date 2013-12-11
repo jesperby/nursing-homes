@@ -13,7 +13,7 @@
       - unless contact_data['post_code'].blank?
         %dd.post_code= "#{contact_data['post_code']} #{contact_data['postal_town']}"
       - unless contact_data['address'].blank?
-        %dd.map= link_to "Visa på karta", u(contact_data['address']), :title => contact_data['address'], :class => "show-single-location"
+        %dd.map= link_to "Visa på karta", u(contact_data['address']), title: contact_data['address'], class: "show-single-location"
 
       - unless contact_data['email'].blank?
         %dd.epost= "E-post: #{contact_data['email']}"
@@ -26,5 +26,5 @@
         %dd.url= link_to "Webbplats", contact_data['url']
       %dd.more-information= link_to "Hur ansöker jag?", contact_data['more_information_link'] unless contact_data['name']
 
-    = link_to "Hur ansöker jag?", "http://www.malmo.se/ansokanomaldreboenden", class: "btn"
+    .more-information= link_to "Hur ansöker jag?", "http://www.malmo.se/ansokanomaldreboenden"
 //eri-no-index

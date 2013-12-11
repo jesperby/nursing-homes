@@ -16,26 +16,25 @@ aside section {
 }
 
 #contact-box {
+  font-family: $sansSerif;
   dl {
-    dt {
-      padding: .8em 0 0;
-    }
-    dd.map {
-      margin-bottom: 1em;
-      a:after {
-        content: "";
-      }
-    }
-    dd.url {
-      margin-bottom: .3em;
-    }
+    margin: 0;
+    padding: 0;
   }
-  .more-info {
+  dd, dt {
+    font-size: emize(13);
+    padding: 0;
+    margin: 0;
+  }
+  dd.map {
+    margin-bottom: 1em;
+  }
+  dd.url {
+    margin-bottom: .3em;
+  }
+  .more-information {
+    font-size: emize(13);
     margin-top: .4em;
-    font-style: normal;
-    a {
-      font-family: $sansSerif;
-    }
   }
 }
 
