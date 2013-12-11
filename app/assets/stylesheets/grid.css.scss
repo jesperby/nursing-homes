@@ -1,18 +1,17 @@
 body {
   padding: 0 .5em;
-  min-width: 58em;
+  min-width: 56em;
   margin-top: 0;
   margin-right: 1em;
   margin-left: 1em;
   margin-bottom: 2em;
 }
 
-#malmo-masthead {
-  max-width: 58em;
+#malmo-masthead,.wrapper {
+  max-width: 56em;
 }
 
 .wrapper {
-  max-width: 58em;
   margin: 0em auto 0;
   @include clearfix();
   > .main {
@@ -22,8 +21,6 @@ body {
     @include columns(3, true);
   }
 }
-
-
 
 iframe {
   width: 100%;
