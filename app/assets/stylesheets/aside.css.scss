@@ -54,11 +54,15 @@ aside section {
         color: black;
       }
     }
-    li .remove {
+    li .icon-remove {
       float: right;
       width: 20px;
       height: 20px;
       cursor: pointer;
+      color: $backgroundDark;
+      &:hover {
+        color: $dangerColor;
+      }
     }
   }
 }

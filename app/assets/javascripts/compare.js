@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
       $.each(itemsIds, function(index, id) {
         $statusList.find("ul").append(
           $("<li>").append( $("<a>").attr("href", nursingHomePath + id).text(nursingHomes[id]) ).prepend(
-            $("<div class='remove'>").attr( { "data-id": id, "title": "Ta bort" } ).text(" ")
+            $("<span class='icon-remove'>").attr( { "data-id": id, "title": "Ta bort" } )
           )
         );
       });
@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
   };
 
   // Remove in the compare box
-  $("#compare-box .status-list li .remove").on('click', function() {
+  $("#compare-box .status-list").on('click', 'li .icon-remove', function() {
     removeItem( $(this).attr('data-id') );
     checkTheBoxes();
   });
