@@ -1,7 +1,7 @@
 %form{ :action => root_path, :method => :get, :id => "filter-form" }
-  %div#filter
-    %h2 Filtrera
-    %fieldset
+  %section#filter.box
+    %h1.box-title Filtrera
+    .box-content
       .form-row.neighborhood
         = label_tag :neighborhood, "Stadsområde:"
         = select :nursing_home, :neighborhood, NursingHome::NEIGHBORHOODS.collect { |val| [val, val ] },
@@ -16,5 +16,5 @@
             { :include_blank => "Alla" }, { :class => "medium", :id => :owner_type }
       .form-row.reset
         = label_tag "reset", "Återställ:"
-        = submit_tag "Återställ", id: "reset", type: "reset", class: "reset"
+        = submit_tag "Återställ", id: "reset", type: "reset", class: "btn btn-small"
       .status= "#{@nursing_homes.length} av #{@nursing_homes.length} boenden visas"
