@@ -13,9 +13,9 @@ jQuery(document).ready(function($) {
   // Put updateList() in a global scope so the map service can call it. Hard coupling.
   window.updateList = updateList;
 
-  if ( $filterForm.length ) {
+  if ($filterForm.length) {
 
-    var $listItems = $("#tab-element-list li");
+    var $listItems = $("ul.results li");
     // Number of nursing homes in the list
     total_items = $listItems.length;
     filtered_items = total_items;
@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
     setFilterOnLoad();
 
     // Filter nursing homes list on filter form change
-    $filterForm.find("select").change( function() {
+    $filterForm.find("select").change(function() {
       readFilterForm();
       updateList();
       saveFilter();
@@ -33,7 +33,6 @@ jQuery(document).ready(function($) {
 
   // Perform filtering based on data-x attributes in the nursing homes list
   function updateList() {
-
     // Build a somewhat complex selector to show/hide the nursing homes
     var selector = "";
     if (!!filter.neighborhood) selector += "[data-neighborhood='" + filter.neighborhood + "']";
@@ -47,9 +46,9 @@ jQuery(document).ready(function($) {
     else {
       filteredIds = [];
       filtered_items = 0;
-      $listItems.each( function() {
+      $listItems.each(function() {
         $this = $(this);
-        if ( $this.is(selector) ) {
+        if ($this.is(selector) ) {
           $this.show();
           filteredIds.push($this.attr("data-id"));
           filtered_items++;
@@ -60,7 +59,7 @@ jQuery(document).ready(function($) {
       });
 
       // Reset filter button w/listner
-      $($filterForm).find("input[type='reset']").show().click( function() {
+      $($filterForm).find("input[type='reset']").show().click(function() {
         filter = {};
         saveFilter();
         updateList();
@@ -68,25 +67,25 @@ jQuery(document).ready(function($) {
     }
 
     // Update the filter status text
-    $filterForm.find(".status").text( filtered_items + " av " + total_items + " boenden visas");
+    $filterForm.find(".status").text(filtered_items + " av " + total_items + " boenden visas");
 
     // Update map to filter objects displayed
     // Note: updateMap() is a global function set in map.js
-    if ($("#tab-element-map iframe").length) updateMap(filtered_items);
+    if ($("iframe#map").length) updateMap(filtered_items);
   }
 
   // Save filter in a cookie so we can set it when the user gets back to the list page
   function saveFilter() {
-    $.cookie('nursing_homes_filter', JSON.stringify( filter ), { path: '/', domain: 'malmo.se' });
+    $.cookie('nursing_homes_filter', JSON.stringify(filter), { path: '/', domain: 'malmo.se' });
   }
 
   // Set filter select box values on load and perform filtering
   function setFilterOnLoad() {
     filter = JSON.parse($.cookie('nursing_homes_filter')) || {};
-    if ( !$.isEmptyObject(filter) ) {
-      if ( !!filter.neighborhood ) $("#neighborhood option[value=" + filter.neighborhood + "]").attr("selected", true);
-      if ( !!filter.category ) $("#category option[value=" + filter.category + "]").attr("selected", true);
-      if ( !!filter.owner_type ) $("#owner_type option[value=" + filter.owner_type + "]").attr("selected", true);
+    if (!$.isEmptyObject(filter)) {
+      if (!!filter.neighborhood) $("#neighborhood option[value=" + filter.neighborhood + "]").attr("selected", true);
+      if (!!filter.category) $("#category option[value=" + filter.category + "]").attr("selected", true);
+      if (!!filter.owner_type) $("#owner_type option[value=" + filter.owner_type + "]").attr("selected", true);
       updateList();
     }
   }
