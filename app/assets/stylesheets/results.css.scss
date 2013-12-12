@@ -1,14 +1,8 @@
-/* Results list */
 ul.results {
   @include clearfix();
   li {
     margin-bottom: 1em;
-    a {
-      @include clearfix();
-    }
-    &.active a {
-      color: #000;
-    }
+    @include clearfix();
   }
   .summary {
     @include columns(9, true);
@@ -38,6 +32,9 @@ ul.results {
         display: inline;
         font-size: emize(13);
         font-family: $sansSerif;
+      }
+      span.icon-plus:before {
+        margin-right: .6em;
       }
     }
   }
