@@ -1,29 +1,26 @@
 .show {
-  h2 {
-  }
   .description {
-    float: left;
-    width: 54%;
+    @include columns(6);
     margin-bottom: 1em;
   }
   #slideshow {
-    float: right;
-    width: 300px;
+    @include columns(6);
     margin: .3em 0 1em;
     .images {
       img {
-        width: 300px;
-        height: 200px;
+        width: 100%;
+        height: auto;
       }
     }
-    ul.controls {
+    menu {
       display: none;
-      background: #333;
-      color: #fff;
-      padding: .4em .5em .45em;
+      background: $backgroundDarker;
+      color: white;
+      padding: .4em .8em .5em .7em;
       font-size: emize(11);
+      font-family: $sansSerif;
       li.prev, li.next {
-        float: left;
+        display: inline;
         cursor: pointer;
       }
       li.prev {
@@ -31,6 +28,9 @@
       }
       li.count {
         float: right;
+        display: inline;
+        white-space: nowrap;
+        overflow: hidden;
       }
     }
   }

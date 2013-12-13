@@ -8,15 +8,17 @@
     %h1= @nursing_home.name
     .description
       = raw sanitize @nursing_home.description, tags: %w(h2 p)
+
     / eri-no-index
-    #slideshow.clearfix
-      %ul.controls.clearfix
+    #slideshow
+      %menu
         %li.prev Föregående
         %li.next Nästa
         %li.count
-      .images.clearfix
+      .images
         - @nursing_home.images.each do |img|
           = image_tag img.image.url(:medium), alt: @nursing_home.name
+
     .compare-check
       = check_box_tag "compare-#{@nursing_home.id}", @nursing_home.id, false, "data-compare" => @nursing_home.id
       = label_tag "compare-#{@nursing_home.id}", "Lägg till i Min lista"
