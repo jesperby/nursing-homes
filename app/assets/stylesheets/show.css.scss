@@ -4,6 +4,7 @@
     margin-bottom: 1em;
   }
   #slideshow {
+    display: none;
     @include columns(6);
     margin: .3em 0 1em;
     .images {
@@ -13,7 +14,6 @@
       }
     }
     menu {
-      display: none;
       background: $backgroundDarker;
       color: white;
       padding: .4em .8em .5em .7em;
@@ -34,12 +34,14 @@
       }
     }
   }
+
   .show-on-map {
     float: right;
     clear: right;
     margin: 1em 0 2em;
     white-space: nowrap;
   }
+
   .compare-check {
     float: right;
     clear: right;

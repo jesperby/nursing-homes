@@ -13,7 +13,7 @@
       .form-row.owner-type
         = label_tag :owner_type, "Organisationsform:"
         = select :nursing_home, :owner_type, NursingHome::OWNER_TYPES.collect { |key, val| [val, key] },
-            { include_blank: "Alla" }, { class: "medium", id: :owner_type }
+          { include_blank: "Alla" }, { class: "medium", id: :owner_type }
       .form-row.reset
         = label_tag "reset", "Återställ:"
         = submit_tag "Återställ", id: "reset", type: "reset", class: "btn btn-small"

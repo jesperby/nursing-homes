@@ -1,3 +1,45 @@
-@media ( min-width: 68em ) {
+@media (max-width: 68em) {
+  body {
+    min-width: 0;
+  }
+}
 
+@media (max-width: 51em) {
+  body {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    > .wrapper {
+      margin: 0 1.5em;
+      padding-bottom: 1em;
+    }
+  }
+  #masthead-search {
+    margin-right: 1em;
+  }
+
+  #filter {
+    .form-row {
+      select {
+        width: emize(150);
+      }
+    }
+    .form-row.reset {
+      input {
+        font-size: emize(11, 14);
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  body .wrapper {
+    margin: 0 1.5em;
+    > .main {
+      @include columns(12);
+    }
+    > aside {
+      @include columns(12);
+    }
+  }
 }

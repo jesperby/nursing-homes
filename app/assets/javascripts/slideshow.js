@@ -3,11 +3,11 @@ jQuery(document).ready(function($) {
   // Create slideshow if there's more than one images for a nursing home
   var $slideshow = $('#slideshow');
   if ($slideshow.length && $slideshow.find('.images > img').length > 1) {
+    $slideshow.show();
 
     var $count = $slideshow.find('menu .count');
     var total = $slideshow.find('.images > img').length;
     var $slider = $slideshow.find('.images');
-    $slideshow.find('menu').show();
 
     $slider.cycle({
       fx: 'fade',
