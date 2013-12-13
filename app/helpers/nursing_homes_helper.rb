@@ -3,13 +3,11 @@ module NursingHomesHelper
   # data-x attributes for each nursing home
   def data_dashes n
     {
-      data: {
-        id: n.id,
-        name: n.name,
-        neighborhood: n.neighborhood,
-        category: "|#{n.categories.collect(&:id).join("|")}|",
-        owner_type: n.owner_type
-      }
+      "data-id" => n.id,
+      "data-name" => n.name,
+      "data-neighborhood" => n.neighborhood,
+      "data-category" => "|#{n.categories.collect(&:id).join("|")}|",
+      "data-owner_type" => n.owner_type
     }
   end
 
