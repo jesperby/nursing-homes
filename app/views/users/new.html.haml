@@ -3,7 +3,7 @@
 
 = form_for(@user, :html => { :multipart => true, :class => 'basic-form', :id => 'edit-form' }) do |f|
   - if @user.errors.any?
-    #error_explanation.alert
+    #error_explanation.warning
       #h2 Vänligen korrigera följande uppgifter:
       %ul
         - @user.errors.full_messages.each do |msg|

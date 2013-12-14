@@ -4,7 +4,7 @@
 
 = form_for(@nursing_home, :html => { :multipart => true, :class => 'basic-form', :id => 'edit-form' }) do |f|
   - if @nursing_home.errors.any?
-    #error_explanation.alert
+    #error_explanation.warning
       #h2 Vänligen korrigera följande uppgifter:
       %ul
         - @nursing_home.errors.full_messages.each do |msg|
