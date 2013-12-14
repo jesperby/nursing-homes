@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class UsersController < ApplicationController
 
-  before_filter { add_body_class('edit') }
+  before_filter { add_body_class('edit edit-users') }
   before_filter :require_admin, :except => :apply
 
   def index
