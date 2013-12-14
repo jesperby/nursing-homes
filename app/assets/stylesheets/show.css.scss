@@ -4,16 +4,17 @@
     margin-bottom: 1em;
   }
   #slideshow {
-    display: none;
     @include columns(6);
     margin: .3em 0 1em;
     .images {
       img {
+        display: none;
         width: 100%;
         height: auto;
       }
     }
     menu {
+      display: none;
       background: $backgroundDarker;
       color: white;
       padding: .4em .8em .5em .7em;
