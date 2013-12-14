@@ -1,13 +1,12 @@
 <% # There's a problem using HAML for this one -%>
-
 <% new_images = @nursing_home.images.collect { |i| i.new_record? ? true : false } %>
 
-<h2>Bilder</h2>
+<h2 class="form-group-title">Bilder</h2>
 <p class="image-instructions upload">Bilderna ska vara 1200px breda och 800px höga och får inte vara större än 1MB.</p>
 
 <% if new_images.include?(false) %>
-  <div class="form-row clearfix">
-    <div id="sort-images" class="thumbs clearfix">
+  <div class="control-group">
+    <div id="sort-images" class="thumbs controls">
       <%= f.fields_for :images do |asset_fields| %>
         <% unless asset_fields.object.new_record? %>
           <div class="thumb">
@@ -26,10 +25,10 @@
   </div>
 <% end %>
 
-<div class="form-row">
-  <div class="label">Lägg till bilder:</div>
+<div class="control-group">
+  <div class="control-label">Lägg till bilder:</div>
   <% if new_images.include?(true) %>
-    <div class="uploads">
+    <div class="controls">
       <%= f.fields_for :images do |asset_fields| %>
         <% if asset_fields.object.new_record? %>
           <%= asset_fields.file_field :image %>

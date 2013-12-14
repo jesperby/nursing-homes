@@ -102,11 +102,12 @@
   = render 'image_uploads', f: f
   = render 'attachment_uploads', f: f
 
+  %h2.form-group-title Publicera
   .control-group.draft
     .controls
       %label.checkbox
         = f.check_box :draft
-        = "Utkast (visas endast för inloggade användare)"
+        = "Utkast (visa endast för inloggade användare)"
   .control-group
     .controls
       = f.submit 'Spara', class: "btn btn-primary"
