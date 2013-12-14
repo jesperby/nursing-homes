@@ -1,8 +1,8 @@
-- blank_option_tag = @nursing_home.new_record? ? { :include_blank => true } : {}
+- blank_option_tag = @nursing_home.new_record? ? { include_blank: true } : {}
 
 = javascript_include_tag "/ckeditor/ckeditor"
 
-= form_for(@nursing_home, :html => { :multipart => true, :class => 'basic-form', :id => 'edit-form' }) do |f|
+= form_for(@nursing_home, html: { multipart: true, class: 'basic-form', id: 'edit-form' }) do |f|
   - if @nursing_home.errors.any?
     #error_explanation.warning
       #h2 Vänligen korrigera följande uppgifter:
@@ -16,18 +16,18 @@
 
   .form-row
     = f.label :description, "Beskrivning:*"
-    = f.text_area :description, :rows => 20
+    = f.text_area :description, rows: 20
     .count
   .form-row
     = f.label :standard, "Boendestandard:*"
-    .small= f.text_area :standard, :rows => "4"
+    .small= f.text_area :standard, rows: "4"
     .count
   .form-row
     = f.label :seats, "Lägenheter:*"
-    = f.number_field :seats, :class => :small
+    = f.number_field :seats, class: :small
   .form-row
     = f.label :rent, "Hyra:*"
-    = f.text_field :rent, :class => :medium
+    = f.text_field :rent, class: :medium
 
   .form-row
     = label_tag nil, "Typ av boende:*"
@@ -41,7 +41,7 @@
   .form-row.owner_type
     = f.label :owner_type, "Organisationsform:*"
     = select :nursing_home, :owner_type, NursingHome::OWNER_TYPES.map { |key, val| [val, key] },
-        {}.merge(blank_option_tag), { :class => "medium" }
+        {}.merge(blank_option_tag), { class: "medium" }
   .form-row.private
     = f.label :owner, "Entreprenör:"
     = f.text_field :owner
@@ -52,25 +52,25 @@
   %h2 Kvalitetsmätning enligt brukare
   .form-row.quality
     = f.label :quality_average, "#{t('nursing_home.quality_average')}:"
-    = f.number_field :quality_average, :class => :small, :in => 1..100
+    = f.number_field :quality_average, class: :small, in: 1..100
   .form-row.quality
     = f.label :quality_environment, "#{t('nursing_home.quality_environment')}:"
-    = f.number_field :quality_environment, :class => :small, :in => 1..100
+    = f.number_field :quality_environment, class: :small, in: 1..100
   .form-row.quality
     = f.label :quality_safety, "#{t('nursing_home.quality_safety')}:"
-    = f.number_field :quality_safety, :class => :small, :in => 1..100
+    = f.number_field :quality_safety, class: :small, in: 1..100
   .form-row.quality
     = f.label :quality_consideration, "#{t('nursing_home.quality_consideration')}:"
-    = f.number_field :quality_consideration, :class => :small, :in => 1..100
+    = f.number_field :quality_consideration, class: :small, in: 1..100
   .form-row.quality
     = f.label :quality_food, "#{t('nursing_home.quality_food')}:"
-    = f.number_field :quality_food, :class => :small, :in => 1..100
+    = f.number_field :quality_food, class: :small, in: 1..100
   .form-row.quality
     = f.label :quality_activities, "#{t('nursing_home.quality_activities')}:"
-    = f.number_field :quality_activities, :class => :small, :in => 1..100
+    = f.number_field :quality_activities, class: :small, in: 1..100
   .form-row.quality
     = f.label :survey_year, "Mätning genomförd:"
-    = select :nursing_home, :survey_year, Date.today.year - 5..Date.today.year, {:include_blank => true}, :class => :small
+    = select :nursing_home, :survey_year, Date.today.year - 5..Date.today.year, {include_blank: true}, class: :small
 
 
   %h2 Adressuppgifter
@@ -81,13 +81,13 @@
     = f.hidden_field :geo_position_y
   .form-row
     = f.label :post_code, "Postnummer:"
-    = f.text_field :post_code, :readonly => true, :tabindex => -1
+    = f.text_field :post_code, readonly: true, tabindex: -1
   .form-row
     = f.label :postal_town, "Postadress:"
-    = f.text_field :postal_town, :readonly => true, :tabindex => -1
+    = f.text_field :postal_town, readonly: true, tabindex: -1
   .form-row
     = f.label :neighborhood, "Stadsområde:"
-    = f.text_field :neighborhood, :readonly => true, :tabindex => -1
+    = f.text_field :neighborhood, readonly: true, tabindex: -1
   .form-row
     = f.label :phone, "Telefon:*"
     = f.text_field :phone
@@ -98,14 +98,14 @@
     = f.label :email, "E-post:"
     = f.text_field :email
 
-  = render 'image_uploads', :f => f
-  = render 'attachment_uploads', :f => f
+  = render 'image_uploads', f: f
+  = render 'attachment_uploads', f: f
 
   .form-row.draft
     = f.check_box :draft
     = f.label :draft, "Utkast (visas endast för inloggade användare)"
   .actions.form
     = f.submit 'Spara'
-    = link_to 'Avbryt', @nursing_home, :class => 'cancel'
+    = link_to 'Avbryt', @nursing_home, class: 'cancel'
 
 
