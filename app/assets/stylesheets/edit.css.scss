@@ -8,18 +8,7 @@
     display: block;
     margin-bottom: 2em;
   }
-  .attachements {
-    margin: 0 11em 0em;
-    .attachements-field {
-      width: 33em;
-      margin-bottom: 0;
-    }
-    .check-radio {
-        margin-bottom: 1.5em;
-      input {
-      }
-    }
-  }
+
   .thumbs, .uploads, {
     margin-left: 0;
     input.file {
@@ -67,12 +56,6 @@
       cursor: move;
       width: 133px;
     }
-  }
-  .image-instructions {
-    margin: .2em 0 0 11em;
-  }
-  .image-instructions.upload {
-    margin: .2em 0 0;
   }
   .count {
     margin: .4em 0 1.5em 12em;
