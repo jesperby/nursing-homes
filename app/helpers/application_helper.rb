@@ -22,4 +22,12 @@ module ApplicationHelper
     end
     data
   end
+
+  def delete_icon_text
+    raw "#{content_tag(:span, nil, class: 'icon-trash icon-large')} Radera"
+  end
+
+  def add_icon_text
+    raw "#{content_tag(:span, nil, class: 'icon-plus')} Skapa nytt"
+  end
 end
