@@ -90,6 +90,7 @@
     }
   }
 
+
   table.user {
     width: 100%;
     margin-bottom: 2em;
@@ -130,4 +131,8 @@
       }
     }
   }
+}
+
+body.user aside {
+  display: none;
 }

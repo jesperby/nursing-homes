@@ -28,6 +28,6 @@ module ApplicationHelper
   end
 
   def add_icon_text
-    raw "#{content_tag(:span, nil, class: 'icon-plus')} Skapa nytt"
+    raw "#{content_tag(:span, nil, class: 'icon-plus')} Lägg till"
   end
 end

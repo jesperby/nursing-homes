@@ -1,21 +1,23 @@
-%h1= "Användare"
+.body-copy
+  %h1= "Användare"
 
-%table.user
-  %thead
-    %tr
-      %th= "Katalog-id"
-      %th= "Namn"
-      %th= "E-post"
-      %th{ :colspan => 2 }= "Roll"
-      %th
-  %tbody
-    - @users.each do |user|
+  %table.wrap.full
+    %thead
       %tr
-        %td= user.username
-        %td= user.displayname
-        %td= user.email
-        %td= user.is_admin ? "Administratör" : "Informatör"
-        %td= link_to 'Växla roll', toggle_admin_user_path(user), :method => :put
-        %td= link_to 'Ta bort', user, confirm: 'Vill du ta bort användaren?', :method => :delete
-%ul.actions
-  %li= link_to "Lägg till användare", new_user_path, class: "btn btn-primary"
+        %th= "Katalog-id"
+        %th= "Namn"
+        %th= "E-post"
+        %th= "Roll"
+        %th
+        %th
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.username
+          %td= user.displayname
+          %td= user.email
+          %td= user.is_admin ? "Administratör" : "Informatör"
+          %td= link_to 'Växla roll', toggle_admin_user_path(user), :method => :put
+          %td= link_to delete_icon_text, user, confirm: 'Vill du ta bort användaren?', :method => :delete, class: "btn btn-danger btn-mini"
+  %menu
+    %li= link_to add_icon_text, new_user_path, class: "btn btn-primary"
