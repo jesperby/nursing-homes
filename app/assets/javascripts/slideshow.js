@@ -14,6 +14,7 @@ jQuery(document).ready(function($) {
       fx: 'fade',
       timeout: 0,
       speed: 200,
+      autoHeight: "calc",
       next: '#slideshow menu .next, #slideshow img',
       prev: '#slideshow menu .prev',
       swipe: true
