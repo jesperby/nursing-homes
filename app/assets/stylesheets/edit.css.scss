@@ -3,187 +3,78 @@
   #compare-box {
     display: none;
   }
-  .basic-form {
-    h2 {
-      margin: 2em 0 .6em;
-      padding-bottom: .3em;
-      border-bottom: 1px solid #C0C0C0;
-      &.base-info {
-        margin-top: 1em;
+  menu.actions {
+    float: right;
+    display: block;
+    margin-bottom: 2em;
+  }
+  .attachements {
+    margin: 0 11em 0em;
+    .attachements-field {
+      width: 33em;
+      margin-bottom: 0;
+    }
+    .check-radio {
+        margin-bottom: 1.5em;
+      input {
       }
     }
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
-      width: 33.5em;
+  }
+  .thumbs, .uploads, {
+    margin-left: 11em;
+    input.file {
+      margin-bottom: 1.5em;
     }
-
-    .form-row input.small {
-      width: 4em;
-    }
-    .form-row input.medium {
-      width: 14.5em;
-    }
-    .form-row select.small{
-      width: 5em;
-    }
-    .form-row select.medium {
-      width: 15em;
-    }
-
-    .form-row .check-radio {
-      width: 33.5em;
+    .thumb, .placeholder {
+      margin: 0 1em 1em 0;
+      float: left;
+      width: 133px;
+      height: 120px;
       overflow: hidden;
-      input {
-        width: auto;
+      padding: .5em;
+      background: #F5F5EE;
+      border: 1px #ccc solid;
+      @include radius(4px);
+      .crop {
+        height: 100px;
+        width: 133px;
+        margin-bottom: .3em;
+        overflow: hidden;
       }
-      label {
-        float: none;
-        display: inline;
-      }
-      &.field_with_errors {
-        border: 2px solid #fc0;
-        background: #fffae0;
-      }
-    }
-    .form-row.draft {
-      margin: 0 0 0 11em;
-      label {
-        float: none;
-        display: inline;
-        width: auto;
-      }
-      input {
-        width: auto;
-      }
-    }
-
-    .form-row textarea {
-      font-family: $serif;
-      line-height: 1.4em;
-    }
-    .form-row .small textarea {
-      font-family: $sansSerif;
-      line-height: 1.3em;
-    }
-
-    .form-row .instruction {
-      font-family: $sansSerif;
-      font-size: emize(13);
-      margin: .4em 0 .2em 12em;
-      color: #333;
-    }
-
-    .actions {
-      margin: 1em 0 0 12em;
-      float: none;
-      text-align: left;
-      border: 0;
-    }
-    .actions input {
-      margin-left: 0;
-    }
-    .actions .cancel {
-      margin-left: .5em;
-    }
-
-    .form-row {
-      .label {
-        float: left;
-        width: 11em;
-      }
-      .attachements {
-        margin: 0 11em 0em;
-        .attachements-field {
-          width: 33em;
-          margin-bottom: 0;
+      .destroy {
+        label, input {
+          font-family: $sansSerif;
+          float: none;
+          display: inline;
+          width: auto;
         }
-        .check-radio {
-            margin-bottom: 1.5em;
-          input {
-          }
+        input {
+          margin: 0 .2em 0 0;
         }
       }
-      .thumbs, .uploads, {
-        margin-left: 11em;
-        input.file {
-          margin-bottom: 1.5em;
-        }
-        .thumb, .placeholder {
-          margin: 0 1em 1em 0;
-          float: left;
-          width: 133px;
-          height: 120px;
-          overflow: hidden;
-          padding: .5em;
-          background: #F5F5EE;
-          border: 1px #ccc solid;
-          @include radius(4px);
-          .crop {
-            height: 100px;
-            width: 133px;
-            margin-bottom: .3em;
-            overflow: hidden;
-          }
-          .destroy {
-            label, input {
-              font-family: $sansSerif;
-              float: none;
-              display: inline;
-              width: auto;
-            }
-            input {
-              margin: 0 .2em 0 0;
-            }
-          }
-        }
-        .placeholder {
-          background: #fff;
-          border: 1px dashed #666;
-        }
-      }
-      .uploads input {
-        margin: 0 0 .6em;
-      }
-      .thumbs {
-        margin-top: .5em;
-        img {
-          cursor: move;
-          width: 133px;
-        }
-      }
-      .image-instructions {
-        margin: .2em 0 0 11em;
-      }
-      .image-instructions.upload {
-        margin: .2em 0 0;
-      }
     }
-    #user_displayname,
-    #user_email,
-    #nursing_home_post_code,
-    #nursing_home_postal_town,
-    #nursing_home_neighborhood {
-      border: #fff solid 1px;
+    .placeholder {
+      background: #fff;
+      border: 1px dashed #666;
     }
   }
-  .field_with_errors {
-    input, select, textarea {
-      border: 2px solid #fc0;
-      background: #fffae0;
+  .uploads input {
+    margin: 0 0 .6em;
+  }
+  .thumbs {
+    margin-top: .5em;
+    img {
+      cursor: move;
+      width: 133px;
     }
   }
-  #error_explanation {
-    ul, li {
-      list-style-type: disc;
-    }
-    ul {
-      margin: .4em 1em .5em;
-      line-height: 1.4em;
-    }
+  .image-instructions {
+    margin: .2em 0 0 11em;
   }
-
-  .form-row .count {
+  .image-instructions.upload {
+    margin: .2em 0 0;
+  }
+  .count {
     margin: .4em 0 1.5em 12em;
     padding: .2em .5em;
     width: 11.8em;
@@ -204,16 +95,15 @@
     }
   }
 
-  .instructions.quality {
-    margin-bottom: 1em;
-  }
-  .form-row.quality {
-    label {
-      clear: both;
+  .control-group.quality {
+    .control-label {
+      display: block;
       width: 100%;
     }
-    input {
-      margin-bottom: 1em;
+    .controls {
+      width: 100%;
+      margin-left: 0;
+      clear: both;
     }
   }
 
@@ -256,9 +146,5 @@
         }
       }
     }
-  }
-  .field_with_errors .cke_skin_kama {
-    border: 1px solid #fc0;
-    background: #fffae0;
   }
 }
