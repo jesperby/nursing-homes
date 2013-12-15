@@ -1,10 +1,10 @@
 .show {
   .description {
-    @include columns(6);
+    @include columns(7);
     margin-bottom: 1em;
   }
   #slideshow {
-    @include columns(6);
+    @include columns(5, true);
     margin: .3em 0 1em;
     .images {
       img {

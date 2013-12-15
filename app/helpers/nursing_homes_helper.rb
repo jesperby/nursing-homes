@@ -33,7 +33,7 @@ module NursingHomesHelper
   def quality_indicator_graph(value)
     if value.present?
       content_tag(:div, class: "graph") do
-        content_tag(:span, class: "satisfaction", style: "width: #{value}px") do
+        content_tag(:span, class: "satisfaction", style: "width: #{value}%") do
           content_tag(:span, "#{value}%")
         end
       end

@@ -89,9 +89,51 @@
   ul#user-menu li {
     margin-left: 0;
   }
+  .show {
+    .quality {
+      border-top: none;
+      .indicator {
+        border-bottom: none;
+        .label {
+          float: none;
+          width: auto;
+        }
+        .value {
+          float: none;
+          margin: .4em 0 1em;
+          .graph {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 32em) {
+  .show {
+    .description {
+      @include columns(12);
+    }
+    #slideshow {
+      @include columns(12);
+    }
+  }
+
+  .show {
+    dl.details {
+      border: none;
+      dt, dd {
+        float: none;
+        display: block;
+        border: none;
+        margin: 0;
+      }
+      dd {
+        margin-bottom: .5em;
+      }
+    }
+  }
   .actions.top {
     display: none;
   }
