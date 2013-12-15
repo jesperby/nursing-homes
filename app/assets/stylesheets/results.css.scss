@@ -8,12 +8,14 @@ ul.results {
     @include columns(9, true);
     margin-bottom: 1em;
     h2 {
+      float: left;
       font-family: $sansSerif;
       font-size: emize(15);
       margin: 0 0 .2em;
       padding: 0;
     }
     .neighborhood, .owner-type {
+      clear: both;
       font-family: $sansSerif;
       font-size: emize(13);
       line-height: 1.4;

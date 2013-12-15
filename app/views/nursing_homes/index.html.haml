@@ -15,13 +15,10 @@
           - unless nursing_home.images.blank?
             .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
           .summary
+            %h2= link_to nursing_home.name, nursing_home
             .compare-check
-              / %a.btn.btn-small.btn-primary{ id: "compare-#{nursing_home.id}", "data-compare" => nursing_home.id, href: nursing_home_path(nursing_home)}
-              /   %span.icon-plus= "Lägg till"
               = check_box_tag "compare-#{nursing_home.id}", nursing_home.id, false, "data-compare" => nursing_home.id
               = label_tag "compare-#{nursing_home.id}", "Lägg till i Min lista"
-
-            %h2= link_to nursing_home.name, nursing_home
             %p.neighborhood= nursing_home.neighborhood
             %p.owner-type= nursing_home.categories.map(&:name).join(", ")
             %p.description= truncate(strip_tags(nursing_home.description), :length => 200)

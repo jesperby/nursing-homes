@@ -27,7 +27,7 @@
   #filter {
     .form-row {
       select {
-        width: emize(150);
+        width: emize(140);
       }
     }
     .form-row.reset {
@@ -43,11 +43,27 @@
     margin: 0 1.5em;
     > .main {
       @include columns(12);
+      margin-bottom: 1em;
     }
     > aside {
       @include columns(12);
     }
   }
+
+  ul.results {
+    .summary {
+      h2 {
+        float: none;
+      }
+      .compare-check {
+        float: none;
+        margin: .5em 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 40em) {
   #filter {
     .form-row {
       float: none;
@@ -66,14 +82,22 @@
       }
     }
   }
-}
-
-@media (max-width: 40em) {
   .breadcrumbs, ul#user-menu {
     float: none;
     clear: both;
   }
   ul#user-menu li {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 28em) {
+  ul.results {
+    .summary {
+      @include columns(12);
+    }
+    .image {
+      display: none;
+    }
   }
 }
