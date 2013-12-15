@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
       toolbarCanCollapse: false,
       language: 'sv',
       height: '22em',
-      width: '34em'
+      // width: '100%'
     });
 
     descEditor.on( "focus", function() {
