@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
     filtered_items = total_items;
 
     // Set filter based on cookie
-    setFilterOnLoad();
+    setFilter();
 
     // Filter nursing homes list on filter form change
     $filterForm.find("select").change(function() {
@@ -60,6 +60,7 @@ jQuery(document).ready(function($) {
 
       // Reset filter button w/listner
       $($filterForm).find("input[type='reset']").show().click(function() {
+        $filterForm.find("select option").removeAttr('selected');
         filter = {};
         saveFilter();
         updateList();
@@ -80,7 +81,7 @@ jQuery(document).ready(function($) {
   }
 
   // Set filter select box values on load and perform filtering
-  function setFilterOnLoad() {
+  function setFilter() {
     filter = JSON.parse($.cookie('nursing_homes_filter')) || {};
     if (!$.isEmptyObject(filter)) {
       if (!!filter.neighborhood) $("#neighborhood option[value=" + filter.neighborhood + "]").attr("selected", true);
