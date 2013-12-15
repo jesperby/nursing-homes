@@ -108,6 +108,9 @@
       }
     }
   }
+  .actions.top {
+    display: none;
+  }
 }
 
 @media (max-width: 32em) {
@@ -133,9 +136,6 @@
         margin-bottom: .5em;
       }
     }
-  }
-  .actions.top {
-    display: none;
   }
 }
 @media (max-width: 28em) {

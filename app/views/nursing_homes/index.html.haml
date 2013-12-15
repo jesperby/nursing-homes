@@ -1,6 +1,7 @@
 .main
   - if current_user
-    = link_to add_icon_text, new_nursing_home_path, class: "btn btn-small btn-primary new"
+    .actions.top
+      = link_to add_icon_text, new_nursing_home_path, class: "btn btn-small btn-primary"
   - cache do
     %h1.title= "Hitta & jämför äldreboenden"
     = render 'filter'
@@ -23,4 +24,5 @@
             %p.owner-type= nursing_home.categories.map(&:name).join(", ")
             %p.description= truncate(strip_tags(nursing_home.description), :length => 200)
   - if current_user
-    = link_to 'Nytt äldreboende', new_nursing_home_path, class: "btn btn-small btn-primary new"
+    .actions
+      = link_to add_icon_text, new_nursing_home_path, class: "btn btn-small btn-primary"
