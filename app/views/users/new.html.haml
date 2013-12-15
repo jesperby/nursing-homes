@@ -2,24 +2,24 @@
   %h1= "Ny användare"
   %p.help Sök på personens användarnamn i personalkatalogen, t.ex. "cectro"
 
-  = form_for(@user, html: { multipart: true, class: 'form-horizontal', id: 'edit-form' }) do |f|
-    - if @user.errors.any?
-      #error_explanation.warning
-        #h2 Vänligen korrigera följande uppgifter:
-        %ul
-          - @user.errors.full_messages.each do |msg|
-            %li= msg
+= form_for(@user, html: { multipart: true, class: 'form-horizontal', id: 'edit-form' }) do |f|
+  - if @user.errors.any?
+    #error_explanation.warning
+      #h2 Vänligen korrigera följande uppgifter:
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
 
-    .control-group
-      .control-label= f.label :username, 'Användarnamn:'
-      .controls= f.text_field :username, class: "medium"
-    .control-group
-      .control-label= f.label :displayname, "Namn:"
-      .controls= f.text_field :displayname, readonly: true, tabindex: -1
-    .control-group
-      .control-label= f.label :email, "E-postadress:"
-      .controls= f.text_field :email, readonly: true, tabindex: -1
-    .control-group
-      .controls
-        = f.submit "Lägg till", class: "btn btn-primary"
-        = link_to 'Avbryt', users_path, class: 'btn'
+  .control-group
+    .control-label= f.label :username, 'Användarnamn:'
+    .controls= f.text_field :username, class: "medium"
+  .control-group
+    .control-label= f.label :displayname, "Namn:"
+    .controls= f.text_field :displayname, readonly: true, tabindex: -1
+  .control-group
+    .control-label= f.label :email, "E-postadress:"
+    .controls= f.text_field :email, readonly: true, tabindex: -1
+  .control-group
+    .controls
+      = f.submit "Lägg till", class: "btn btn-primary"
+      = link_to 'Avbryt', users_path, class: 'btn'

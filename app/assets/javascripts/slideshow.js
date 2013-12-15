@@ -11,6 +11,7 @@ jQuery(document).ready(function($) {
     $slideshow.find("menu").show();
 
     $slider.cycle({
+      log: false,
       fx: 'fade',
       timeout: 0,
       speed: 200,
