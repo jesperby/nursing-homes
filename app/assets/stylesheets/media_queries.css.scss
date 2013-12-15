@@ -43,3 +43,13 @@
     }
   }
 }
+
+@media (max-width: 40em) {
+  .breadcrumbs, ul#user-menu {
+    float: none;
+    clear: both;
+  }
+  ul#user-menu li {
+    margin-left: 0;
+  }
+}
