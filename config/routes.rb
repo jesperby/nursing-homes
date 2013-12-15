@@ -2,7 +2,7 @@ NursingHomes::Application.routes.draw do
 
   root :to => "nursing_homes#index"
   get    "/nursing_homes/compare" => "nursing_homes#compare", :as => :compare_nursing_homes
-  get    "/nursing_homes/additional_buttons" => "nursing_homes#additional_buttons"
+  get    "/nursing_homes/map" => "nursing_homes#map"
   resources :nursing_homes
 
   get "login", :to => "sessions#new", :as => "login"

@@ -10,8 +10,11 @@ class NursingHomesController < ApplicationController
   cache_sweeper :nursing_home_sweeper
 
   def index
-    show_draft = current_user ? { } : { draft: false } # Drafted records are for authenticated users only
-    @nursing_homes = NursingHome.where( show_draft ).order("name asc").includes(:images).includes(:attachments)
+    @nursing_homes = nursing_homes
+  end
+
+  def map
+    @nursing_homes = nursing_homes
   end
 
   def show
@@ -81,18 +84,18 @@ class NursingHomesController < ApplicationController
     render_api NursingHome.api(urls, params)
   end
 
-  # Render admin buttons in front-end to allow page caching
-  def additional_buttons
-    expires_in 6.hour
-    render :layout => false
-  end
-
   def not_found
     # 404 with a layout
     render :status => 404
   end
 
   private
+
+  def nursing_homes
+    show_draft = current_user ? {} : { draft: false } # Drafted records are for authenticated users only
+    NursingHome.where(show_draft).order("name asc").includes(:images).includes(:attachments)
+  end
+
   def new_images
     # Existing Paperclip images minus max_number_of_images
     ( APP_CONFIG["max_number_of_images"] - @nursing_home.images.length ).times { @nursing_home.images.build }

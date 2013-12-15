@@ -1,0 +1,13 @@
+.main
+  - if current_user
+    .actions.top
+      = link_to add_icon_text, new_nursing_home_path, class: "btn btn-small btn-primary"
+  - cache do
+    %h1.title= "Hitta & jämför äldreboenden"
+    = render 'filter'
+
+    %ul.switch-view
+      %li= link_to "Översikt", nursing_homes_path
+      %li.active= link_to "Visa på karta", nursing_homes_map_path
+
+  %iframe#inline-map{ src: "#{APP_CONFIG['map_url']}&amp;ids=", scrolling: "no", frameborder: "no" }
