@@ -1,13 +1,13 @@
 #filter {
   .form-row {
     float: left;
-    label {
-      margin-bottom: .2em;
-    }
-    select {
-      width: emize(160);
-      margin: 0 1em .5em 0;
-    }
+  }
+  label {
+    margin-bottom: .2em;
+  }
+  select {
+    width: emize(160);
+    margin: 0 1em .5em 0;
   }
   .form-row.neighborhood {
     clear: left;
