@@ -69,10 +69,6 @@ jQuery(document).ready(function($) {
 
     // Update the filter status text
     $filterForm.find(".status").text(filtered_items + " av " + total_items + " boenden visas");
-
-    // Update map to filter objects displayed
-    // Note: updateMap() is a global function set in map.js
-    if ($("iframe#map").length) updateMap(filtered_items);
   }
 
   // Save filter in a cookie so we can set it when the user gets back to the list page

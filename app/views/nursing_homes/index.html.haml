@@ -6,9 +6,9 @@
     %h1.title= "Hitta & jämför äldreboenden"
     = render 'filter'
 
-    %ul.switch-view
-      %li.active= link_to "Översikt", nursing_homes_path
-      %li= link_to "Visa på karta", nursing_homes_map_path
+    %menu.switch-view
+      %li#as-list.active= link_to "Översikt", nursing_homes_path
+      %li#as-map= link_to "Visa på karta", nursing_homes_path
 
     %ul.results
       - @nursing_homes.each do |nursing_home|
@@ -23,6 +23,9 @@
             %p.neighborhood= nursing_home.neighborhood
             %p.owner-type= nursing_home.categories.map(&:name).join(", ")
             %p.description= truncate(strip_tags(nursing_home.description), :length => 200)
+
+  #map
+
   - if current_user
     .actions
       = link_to add_icon_text, new_nursing_home_path, class: "btn btn-small btn-primary"
