@@ -53,3 +53,13 @@ ul.results {
 #map {
   display: none;
 }
+
+.switch-view {
+  margin-bottom: 1em;
+  li {
+    font-family: $sansSerif;
+    font-size: emize(15);
+    display: inline;
+    margin-right: 1em;
+  }
+}
