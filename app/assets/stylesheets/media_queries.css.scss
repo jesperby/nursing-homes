@@ -42,6 +42,24 @@
       @include columns(12);
     }
   }
+  #filter {
+    .form-row {
+      float: none;
+      label {
+        width: emize(160);
+        display: inline-block;
+      }
+      select {
+        width: emize(260);
+      }
+    }
+    .form-row.reset {
+      margin: .5em 0 1em;
+      label {
+        display: none;
+      }
+    }
+  }
 }
 
 @media (max-width: 40em) {
