@@ -1,13 +1,13 @@
-%ul.actions
-  %li= link_to 'Visa alla boenden', root_path, class: "btn"
-
-%h1 Jämför äldreboenden
+.actions
+  = link_to 'Visa alla boenden', root_path, class: "btn btn-small"
+.body-copy
+  %h1 Jämför äldreboenden
 #compare
   - unless @nursing_homes
     %p.no-records= link_to 'Lägg först till de äldreboenden du vill jämföra till "Min lista."', root_path
   - else
 
-    %table
+    %table.full.wrap
       %thead
         %tr
           %td.xy
@@ -23,7 +23,7 @@
           %td.first
           - @nursing_homes.each do |nursing_home|
             %td{ :class => "item-#{nursing_home.id} remove" }
-              .remove.btn{ "data-id" => nursing_home.id }= "Ta bort"
+              .remove.btn.btn-small{ "data-id" => nursing_home.id }= "Ta bort"
         %tr
           %th Adress:
           - @nursing_homes.each do |nursing_home|
@@ -56,21 +56,21 @@
           - @nursing_homes.each do |nursing_home|
             %td{ :class => "item-#{nursing_home.id}" }= nursing_home.owner
 
-      %tr
-        %th.sub-heading{ :colspan => @nursing_homes.length + 1 }
-          = "Kvalitetsmätning enligt brukare"
+        %tr
+          %th.sub-heading{ :colspan => @nursing_homes.length + 1 }
+            = "Kvalitetsmätning enligt brukare"
 
-      %tr= compare_quality @nursing_homes, :quality_average
-      %tr= compare_quality @nursing_homes, :quality_environment
-      %tr= compare_quality @nursing_homes, :quality_safety
-      %tr= compare_quality @nursing_homes, :quality_consideration
-      %tr= compare_quality @nursing_homes, :quality_food
-      %tr= compare_quality @nursing_homes, :quality_activities
+        %tr= compare_quality @nursing_homes, :quality_average
+        %tr= compare_quality @nursing_homes, :quality_environment
+        %tr= compare_quality @nursing_homes, :quality_safety
+        %tr= compare_quality @nursing_homes, :quality_consideration
+        %tr= compare_quality @nursing_homes, :quality_food
+        %tr= compare_quality @nursing_homes, :quality_activities
 
-      %tr
-        %th= "Mätning genomförd: "
-        - @nursing_homes.each do |nursing_home|
-          %td{ :class => "item-#{nursing_home.id}" }=  nursing_home.survey_year
+        %tr
+          %th= "Mätning genomförd: "
+          - @nursing_homes.each do |nursing_home|
+            %td{ :class => "item-#{nursing_home.id}" }=  nursing_home.survey_year
 
-%ul.actions
-  %li= link_to 'Visa alla boenden', root_path, class: "btn"
+.actions
+  = link_to 'Visa alla boenden', root_path, class: "btn btn-small"

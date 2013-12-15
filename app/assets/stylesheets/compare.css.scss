@@ -1,22 +1,9 @@
 #compare {
   overflow-x: auto;
   table {
-    border: none;
-    width: 100%;
-    margin-bottom: 2em;
     th, td {
-      vertical-align: top;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding: .6em;
-      border-bottom: 1px solid #ccc;
-      border-collapse: collapse;
-      background: none;
-    }
-    thead th {
-      vertical-align: bottom;
-      padding-top: 0;
-      padding-bottom: .2em;
     }
     td.xy {
       border: none;
@@ -28,13 +15,13 @@
       width: 15em;
       max-width: 15em;
     }
-    tr {
-      background: none;
-    }
     th.sub-heading {
       padding: 1.5em 0 .2em;
       background: none;
       border-bottom: 1px solid #666;
+    }
+    th.quality {
+      font-weight: normal;
     }
     td.note {
       font-weight: normal;

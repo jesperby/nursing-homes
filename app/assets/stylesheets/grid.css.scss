@@ -22,6 +22,14 @@ body {
   }
 }
 
+body.compare {
+  padding: 0 .5em;
+  min-width: 0;
+  #malmo-masthead,.wrapper {
+    max-width: 500em;
+  }
+}
+
 iframe {
   width: 100%;
   height: 500px;
