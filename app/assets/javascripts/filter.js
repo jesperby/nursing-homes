@@ -27,6 +27,7 @@ jQuery(document).ready(function($) {
     $filterForm.find("select").change(function() {
       readFilterForm();
       updateList();
+      updateMap();
       saveFilter();
     });
   }
@@ -64,6 +65,7 @@ jQuery(document).ready(function($) {
         filter = {};
         saveFilter();
         updateList();
+        updateMap();
       });
     }
 
