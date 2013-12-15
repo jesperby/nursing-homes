@@ -90,10 +90,11 @@
     }
   }
 
-
   table.user {
-    width: 100%;
     margin-bottom: 2em;
+    .btn-danger {
+      white-space: nowrap;
+    }
   }
   p.instructions {
     margin: .3em 0 .5em;
