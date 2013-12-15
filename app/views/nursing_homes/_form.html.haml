@@ -16,12 +16,14 @@
 
   .control-group
     .control-label= f.label :description, "Beskrivning:*"
-    .controls= f.text_area :description, rows: 20, class: "wide"
-    .count
+    .controls
+      = f.text_area :description, rows: 20, class: "wide"
+      .count
   .control-group
     .control-label= f.label :standard, "Boendestandard:*"
-    .controls= f.text_area :standard, rows: "4", class: "wide"
-    .count
+    .controls
+      = f.text_area :standard, rows: "4", class: "wide"
+      .count
   .control-group
     .control-label= f.label :seats, "Lägenheter:*"
     .controls= f.number_field :seats, class: "small"

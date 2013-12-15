@@ -120,7 +120,9 @@
   }
 
   ul.nearby, ul.attachments  {
+    list-style: none;
     font-size: emize(14);
-    margin: 0em 0 1em;
+    margin: 0 0 1em;
+    padding: 0;
   }
 }
