@@ -23,8 +23,10 @@
     .compare-check
       = check_box_tag "compare-#{@nursing_home.id}", @nursing_home.id, false, "data-compare" => @nursing_home.id
       = label_tag "compare-#{@nursing_home.id}", "Lägg till i Min lista"
-    = link_to "Visa på karta", "#map", class: "show-on-map btn btn-small",
-        data: { poi: @nursing_home.address, "map-selector" => "#map", "scroll-to" => ".main h1" }
+    %a.show-on-map.btn.btn-small{ href: "#map", data: { poi: @nursing_home.address, "map-selector" => "#map", "scroll-to" => ".main h1" }}
+      %span.icon-map-marker
+      Visa på karta
+
     //eri-no-index
 
     %dl.details

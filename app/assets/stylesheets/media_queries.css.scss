@@ -148,3 +148,12 @@
     }
   }
 }
+
+
+@media (max-width: 22em) {
+  // Hack to mask SBK:s label
+  a.close-map {
+    padding-right: 2em;
+    background: #dedede; // SBKs color
+  }
+}
