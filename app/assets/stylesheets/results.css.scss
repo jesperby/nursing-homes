@@ -61,5 +61,11 @@ ul.results {
     font-size: emize(15);
     display: inline;
     margin-right: 1em;
+    a {
+      color: black;
+      span:before {
+        margin-right: .4em;
+      }
+    }
   }
 }
