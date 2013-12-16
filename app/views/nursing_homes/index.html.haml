@@ -9,10 +9,12 @@
     %menu.switch-view
       %li#as-list.active
         %a{ href: nursing_homes_path }
-          %span.icon-list.icon-large= "Visa som lista"
+          %span.icon-list.icon-large
+          Visa som lista
       %li#as-map
         %a{ href: nursing_homes_path }
-          %span.icon-map-marker.icon-large= "Visa på karta"
+          %span.icon-map-marker.icon-large
+          Visa på karta
 
     %ul.results
       - @nursing_homes.each do |nursing_home|

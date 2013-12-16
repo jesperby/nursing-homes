@@ -29,6 +29,8 @@ jQuery(document).ready(function($) {
 
   $('#as-map').click(function(event) {
     event.preventDefault();
+    $(this).addClass("active");
+    $("#as-list").removeClass("active");
     $('#map').show();
     $('ul.results').hide();
     injectMap();
@@ -36,6 +38,8 @@ jQuery(document).ready(function($) {
 
   $('#as-list').click(function(event) {
     event.preventDefault();
+    $(this).addClass("active");
+    $("#as-map").removeClass("active");
     $('#map').hide();
     $('ul.results').show();
   });

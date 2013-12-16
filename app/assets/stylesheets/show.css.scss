@@ -50,6 +50,9 @@
     clear: right;
     margin: 1em 0 2em;
     white-space: nowrap;
+    span {
+      margin-right: .2em;
+    }
   }
 
   .compare-check {

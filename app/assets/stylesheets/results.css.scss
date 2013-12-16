@@ -58,15 +58,18 @@ ul.results {
   margin-bottom: 1em;
   li {
     font-family: $sansSerif;
-    font-size: emize(15);
+    font-size: emize(13);
     display: inline;
     margin-right: 1em;
     a {
       color: black;
       span:before {
         color: $backgroundDarker;
-        margin-right: .4em;
+        margin-right: .2em;
       }
+    }
+    &.active a {
+      cursor: default;
     }
   }
 }
