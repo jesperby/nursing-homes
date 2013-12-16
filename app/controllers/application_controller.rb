@@ -52,8 +52,9 @@ class ApplicationController < ActionController::Base
     @body_classes << " #{name}"
   end
 
-  def url_for_map(nursing_home)
-    "http://www.malmo.se/karta?poi=#{CGI::escape(nursing_home.address)}&center=#{nursing_home.geo_position_x},#{nursing_home.geo_position_y}&zoomlevel=4&maptype=karta"
+  def url_for_map(street_address)
+    map_env = Rails.env.production? ? "prod" : "test"
+    "http://xyz.malmo.se/mkarta/init/map-1.00.htm?mapmode=basic&poi=#{CGI::escape(street_address)}&amp;zoomlevel=3&amp;maptype=Karta&amp;env=#{map_env}"
   end
   helper_method :url_for_map
 end

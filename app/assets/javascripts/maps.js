@@ -1,6 +1,9 @@
 jQuery(document).ready(function($) {
   document.domain = "malmo.se"; // must be set both here and in the map iframe
 
+  // mapUrl is set on the html page
+  var $mapIframe = $('<iframe scrolling="no" frameborder="0" src=""></iframe>');
+
   // Inject map iframe
   injectMap = function() {
     var ids = !!filtered_items ? filteredIds.join(",") : "0";
@@ -19,8 +22,6 @@ jQuery(document).ready(function($) {
     }
   };
 
-  // mapUrl is set on the html page
-  var $mapIframe = $('<iframe scrolling="no" frameborder="0" src=""></iframe>');
   // Show filtered nursing homes on map after loading
   $mapIframe.load( function() {
     updateMap();
@@ -37,11 +38,5 @@ jQuery(document).ready(function($) {
     event.preventDefault();
     $('#map').hide();
     $('ul.results').show();
-  });
-
-  // Show single object on inline map
-  $(".show-on-map" ).click(function (event) {
-    $("#map").show();
-    console.log("Inject map");
   });
 });

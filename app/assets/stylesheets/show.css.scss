@@ -38,10 +38,11 @@
 
   #map {
     display: none;
+    overflow: hidden;
     margin: 0 0 1em;
     border: $border;
     width: 100%;
-    height: 28em;
+    height: 31.3em;
   }
 
   .show-on-map {
