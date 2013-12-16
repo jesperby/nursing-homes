@@ -51,4 +51,9 @@ class ApplicationController < ActionController::Base
     @body_classes << " user" if current_user
     @body_classes << " #{name}"
   end
+
+  def url_for_map(nursing_home)
+    "http://www.malmo.se/karta?poi=#{CGI::escape(nursing_home.address)}&center=#{nursing_home.geo_position_x},#{nursing_home.geo_position_y}&zoomlevel=4&maptype=karta"
+  end
+  helper_method :url_for_map
 end

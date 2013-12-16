@@ -39,9 +39,9 @@ jQuery(document).ready(function($) {
     $('ul.results').show();
   });
 
-  // Show single object on map in a lightbox
-  $("#show-address-on-map" ).click(function (event) {
-    event.preventDefault();
-    $.malmo.map.showLocation($(this).attr('title'));
+  // Show single object on inline map
+  $(".show-on-map" ).click(function (event) {
+    $("#map").show();
+    console.log("Inject map");
   });
 });

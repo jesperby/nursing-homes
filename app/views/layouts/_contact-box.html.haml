@@ -13,7 +13,7 @@
       - unless contact_data['post_code'].blank?
         %dd.post_code= "#{contact_data['post_code']} #{contact_data['postal_town']}"
       - unless contact_data['address'].blank?
-        %dd.map= link_to "Visa på karta", u(contact_data['address']), title: contact_data['address'], class: "show-single-location"
+        %dd.map= link_to "Visa på karta", "#map", title: contact_data['address'], class: "show-on-map"
 
       - unless contact_data['email'].blank?
         %dd.epost= "E-post: #{contact_data['email']}"

@@ -6,6 +6,7 @@
 
   - cache @nursing_home do
     %h1= @nursing_home.name
+    #map
     .description
       = raw sanitize @nursing_home.description, tags: %w(h2 p)
 
@@ -22,7 +23,7 @@
     .compare-check
       = check_box_tag "compare-#{@nursing_home.id}", @nursing_home.id, false, "data-compare" => @nursing_home.id
       = label_tag "compare-#{@nursing_home.id}", "Lägg till i Min lista"
-    .show-on-map= link_to "Visa på karta", "http://www.malmo.se/karta?poi=#{u(@nursing_home.address)}&center=#{@nursing_home.geo_position_x},#{@nursing_home.geo_position_y}&zoomlevel=4&maptype=karta", title: @nursing_home.address, id: "show-address-on-map", class: "btn btn-small"
+    .show-on-map= link_to "Visa på karta", "#map", title: @nursing_home.address, id: "show-address-on-map", class: "btn btn-small", "data-map-url" => url_for_map(@nursing_home)
     //eri-no-index
 
     %dl.details
