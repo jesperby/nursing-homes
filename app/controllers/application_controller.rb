@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :init_body_class, :except => [ :api_index, :api_show ]
-  before_filter :protected_mode if Rails.env.test? || Rails.env.staging?
+  # before_filter :protected_mode if Rails.env.test? || Rails.env.staging?
 
   private
 
