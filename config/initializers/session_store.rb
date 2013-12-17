@@ -1,1 +1,1 @@
-NursingHomes::Application.config.session_store :active_record_store
+NursingHomes::Application.config.session_store :active_record_store, { key: Rails.env.test? ? "_session_id_test" : "_session_id" }
