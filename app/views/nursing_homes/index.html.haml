@@ -19,8 +19,9 @@
     %ul.results
       - @nursing_homes.each do |nursing_home|
         %li{ data_dashes(nursing_home), class: ("drafted" if nursing_home.draft) }
-          - unless nursing_home.images.blank?
-            .image= link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
+          .image
+            - if nursing_home.images.present?
+              = link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
           .summary
             %h2= link_to nursing_home.name, nursing_home
             .compare-check

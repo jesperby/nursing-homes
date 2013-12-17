@@ -42,6 +42,7 @@ ul.results {
   }
   .image {
     @include columns(3);
+    min-height: 1em;
     img {
       margin-top: .3em;
       width: 100%;
