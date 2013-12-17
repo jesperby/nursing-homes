@@ -5,7 +5,6 @@
   - unless @nursing_homes
     %p.no-records= link_to 'Lägg först till de äldreboenden du vill jämföra till "Min lista."', root_path
   - else
-
     %table.full.wrap
       %thead
         %tr
@@ -17,7 +16,8 @@
           %td.first
           - @nursing_homes.each do |nursing_home|
             %td{ :class => "item-#{nursing_home.id}" }
-              = image_tag nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name
+              - if nursing_home.images.present?
+                = image_tag nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name
         %tr
           %td.first
           - @nursing_homes.each do |nursing_home|
