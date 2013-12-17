@@ -9,8 +9,8 @@ class NursingHome < ActiveRecord::Base
   }
   NEIGHBORHOODS = %w[Innerstaden Norr Söder Väster Öster]
 
-  has_many :images, :order => "position"
-  has_many :attachments
+  has_many :images, :order => "position", dependent: :destroy
+  has_many :attachments, dependent: :destroy
   accepts_nested_attributes_for :images, :allow_destroy => true
   accepts_nested_attributes_for :attachments, :allow_destroy => true
 
