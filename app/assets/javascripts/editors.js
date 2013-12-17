@@ -17,11 +17,11 @@ jQuery(document).ready(function($) {
       entities: false,
       htmlEncodeOutput: false,
       forceSimpleAmpersand: true,
-      removePlugins: 'elementspath,resize,embed,dialog,attachment',
+      removePlugins: 'elementspath,resize,embed,dialog,attachment,pastetext',
       toolbarCanCollapse: false,
       language: 'sv',
       height: '22em',
-      // width: '100%'
+      width: '93%'
     });
 
     descEditor.on( "focus", function() {
