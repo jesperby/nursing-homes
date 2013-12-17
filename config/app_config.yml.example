@@ -30,5 +30,5 @@ staging:
 production:
   <<: *defaults
   title_suffix: "Hitta & jämför äldreboenden - Malmö stad"
-  assets_url_base: "//assets.malmo.se/external-3.0-staging/"
+  assets_url_base: "//assets.malmo.se/external-3.0/"
   map_url: "//xyz.malmo.se/rest/1.0/map/?config=configs/aldreboende-1.0.js"
