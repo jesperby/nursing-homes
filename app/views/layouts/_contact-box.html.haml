@@ -1,29 +1,35 @@
 / eri-no-index
-%section#contact-box
+%aside.contact-us.basic.vcard
   %h1 Kontakta oss
   - if contact_data.blank?
-    %p
+    %div
       = t("contact_more_information")
       = link_to "Läs mer", t("contact_more_information_link")
   - else
-    %dl
-      %dt.name= contact_data['name'] or "Nytt äldreboende"
+    %div
+      .fn= contact_data['name'] or "Nytt äldreboende"
       - unless contact_data['address'].blank?
-        %dd.address= contact_data['address']
+        .address= contact_data['address']
       - unless contact_data['post_code'].blank?
-        %dd.post_code= "#{contact_data['post_code']} #{contact_data['postal_town']}"
+        .post_code= "#{contact_data['post_code']} #{contact_data['postal_town']}"
       - unless contact_data['address'].blank?
-        %dd.map= link_to "Visa på karta", "#map", title: contact_data['address'], class: "show-on-map",
+        .map= link_to "Visa på karta", "#map", title: contact_data['address'], class: "show-on-map",
           data: { poi: contact_data['address'], "map-selector" => "#map", "scroll-to" => "main h1" }
 
       - unless contact_data['email'].blank?
-        %dd.epost= "E-post: #{contact_data['email']}"
+        %div
+          = "E-post:"
+          %span.email= contact_data['email']
       - unless contact_data['phone'].blank?
-        %dd.tel= "Telefon: #{contact_data['phone']}"
+        %div
+          = "Telefon:"
+          %span.tel= contact_data['phone']
       - unless contact_data['fax'].blank?
-        %dd.tel= "Fax: #{contact_data['fax']}"
+        %div
+          = "Fax:"
+          %span.tel= contact_data['fax']
 
       - unless contact_data['url'].blank?
-        %dd.url= link_to "Webbplats", contact_data['url']
-      %dd.more-information= link_to "Hur ansöker jag?", contact_data['more_information_link'] unless contact_data['name']
+        .url= link_to "Webbplats", contact_data['url']
+      .more-information= link_to "Hur ansöker jag?", contact_data['more_information_link'] unless contact_data['name']
 //eri-no-index

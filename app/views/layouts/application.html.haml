@@ -27,7 +27,7 @@
 
       /eri-desc
       %ol.breadcrumbs
-        %li.home= link_to 'malmo.se','http://www.malmo.se/'
+        %li.home= link_to 'Start','http://www.malmo.se/'
         %li= link_to 'Hitta & jämför äldreboenden', root_path
       //eri-desc
 
@@ -37,10 +37,9 @@
       = yield
 
       - unless params[:controller] == "nursing_homes" && params[:action] == "compare"
-        %aside
-          = render 'layouts/contact-box'
-          - cache "compare-box" do
-            = render 'layouts/compare-box'
+        - cache "compare-box" do
+          = render 'layouts/compare-box'
+        = render 'layouts/contact-box'
 
     %script
       = "var CKEDITOR_BASEPATH = '#{root_path}ckeditor/';"

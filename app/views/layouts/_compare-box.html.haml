@@ -1,7 +1,8 @@
 / eri-no-index
-%section#compare-box
+%nav.basic#compare-box
   %h1 Min lista
   .status-list
-  %p.how-to= 'Kryssa i "Visa i Min lista" intill ett boende för att lägga till det till din jämförelselista.'
-  = link_to "Jämför dessa", compare_nursing_homes_path, class: "btn btn-small compare"
+  %ul
+    %li.how-to= 'Kryssa i "Visa i Min lista" intill ett boende för att lägga till det till din jämförelselista.'
+    %li= link_to "Jämför dessa", compare_nursing_homes_path, class: "btn btn-default btn-sm compare"
 //eri-no-index

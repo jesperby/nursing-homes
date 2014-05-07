@@ -10,11 +10,11 @@ ul, ol, li {
   padding: 0;
 }
 
-h1.title {
-  font-weight: normal;
-  font-size: emize(32, 16);
-  line-height: 1.1;
-  margin: .1em 0 .3em;
+.contact-us {
+  margin-bottom: 2em;
+  .map {
+    margin-bottom: 1em;
+  }
 }
 
 .body-copy h2 {

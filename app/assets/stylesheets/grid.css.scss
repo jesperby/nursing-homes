@@ -1,21 +1,18 @@
 .wrapper {
   @include clearfix();
   margin: 0 auto;
-  max-width: 55em;
+  max-width: 60em;
   padding: 0 1em;
   @media (max-width: 48em) {
     max-width: 34em;
   }
 }
-.wrapper {
-  margin: 0 auto;
-  @include clearfix();
-  > main {
-    @include columns(9);
-  }
-  > aside {
-    @include columns(3, true);
-  }
+main, .contact-us {
+  @include columns(9);
+}
+
+#compare-box {
+  @include columns(3, true);
 }
 
 body.compare {

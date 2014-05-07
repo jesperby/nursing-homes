@@ -1,6 +1,6 @@
 .actions.top
   = link_to 'Visa alla boenden', root_path, class: "btn btn-small"
-%h1.title Jämför äldreboenden
+%h1.body-copy Jämför äldreboenden
 #compare
   - unless @nursing_homes
     %p.no-records= link_to 'Lägg först till de äldreboenden du vill jämföra till "Min lista."', root_path
