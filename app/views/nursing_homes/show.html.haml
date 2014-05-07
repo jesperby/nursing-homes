@@ -1,4 +1,4 @@
-.main.show.body-copy{ class: ("drafted" if @nursing_home.draft) }
+%main.show.body-copy{ role: :main, class: ("drafted" if @nursing_home.draft) }
   .actions.top
     = link_to 'Visa alla boenden', root_path, class: "btn btn-small"
     - if current_user

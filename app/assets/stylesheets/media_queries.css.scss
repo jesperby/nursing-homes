@@ -39,17 +39,6 @@
 }
 
 @media (max-width: 48em) {
-  body .wrapper {
-    margin: 0 1.5em;
-    > .main {
-      @include columns(12);
-      margin-bottom: 1em;
-    }
-    > aside {
-      @include columns(12);
-    }
-  }
-
   ul.results {
     .summary {
       h2 {
