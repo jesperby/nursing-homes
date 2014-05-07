@@ -3,10 +3,8 @@
   margin: 0 auto;
   max-width: 60em;
   padding: 0 1em;
-  @media (max-width: 48em) {
-    max-width: 34em;
-  }
 }
+
 main, .contact-us {
   @include columns(9);
 }
@@ -15,11 +13,22 @@ main, .contact-us {
   @include columns(3, true);
 }
 
-body.compare {
-  padding: 0 .5em;
-  min-width: 0;
-  #malmo-masthead,.wrapper {
-    max-width: 500em;
+@media (max-width: 54em) {
+  main, .contact-us {
+    @include columns(8);
+  }
+
+  #compare-box {
+    @include columns(4, true);
+  }
+}
+
+@media (max-width: 49em) {
+  .wrapper {
+    max-width: 38em;
+  }
+  main, .contact-us, #compare-box {
+    @include columns(12);
   }
 }
 
