@@ -1,20 +1,20 @@
-%form#filter-form{ action: root_path, method: :get }
-  %section#filter.box
-    %h1.box-title Filtrera
-    .box-content
+%section#filter.box
+  %h1.box-title Filtrera
+  .box-content
+    %form#filter-form.basic{ action: root_path, method: :get }
       .form-row.neighborhood
-        = label_tag :neighborhood, "Stadsområde:"
+        = label_tag :neighborhood, "Stadsområde:", class: "control-label"
         = select :nursing_home, :neighborhood, NursingHome::NEIGHBORHOODS.collect { |val| [val, val ] },
-          { include_blank: "Alla" }, { class: "medium", id: :neighborhood }
+          { include_blank: "Alla" }, { class: "form-control input-sm", id: :neighborhood }
       .form-row.category
-        = label_tag :category, "Typ av boende:"
+        = label_tag :category, "Typ av boende:", class: "control-label"
         = select :nursing_home, :category, Category.all.map { |c| [ c.short_name, c.id ] },
-          { include_blank: "Alla" }, { class: "medium", id: :category }
+          { include_blank: "Alla" }, { class: "form-control input-sm", id: :category }
       .form-row.owner-type
-        = label_tag :owner_type, "Organisationsform:"
+        = label_tag :owner_type, "Organisationsform:", class: "control-label"
         = select :nursing_home, :owner_type, NursingHome::OWNER_TYPES.collect { |key, val| [val, key] },
-          { include_blank: "Alla" }, { class: "medium", id: :owner_type }
+          { include_blank: "Alla" }, { class: "form-control input-sm", id: :owner_type }
       .form-row.reset
-        = label_tag "reset", "Återställ:"
-        = submit_tag "Återställ", id: "reset", type: "reset", class: "btn btn-small"
+        = label_tag "reset", "Återställ:", class: "control-label"
+        = submit_tag "Återställ", id: "reset", type: "reset", class: "btn btn-default btn-sm"
       .status= "#{@nursing_homes.length} av #{@nursing_homes.length} boenden visas"

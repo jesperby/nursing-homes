@@ -7,14 +7,18 @@
     margin-bottom: .2em;
   }
   select {
-    width: emize(160);
+    width: emize(200);
     margin: 0 1em .5em 0;
   }
   .form-row.neighborhood {
     clear: left;
   }
+  .form-row.owner-type {
+    @media (max-width: 60em) {
+      clear: left;
+    }
+  }
   .status {
-    font-size: emize(13);
     clear: left;
   }
   .form-row.reset {
@@ -22,7 +26,11 @@
       visibility: hidden;
     }
     input {
-      display: none;
+      display: block;
+      visibility: hidden;
+      &.activated {
+        visibility: visible;
+      }
     }
   }
 }
