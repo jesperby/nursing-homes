@@ -1,13 +1,14 @@
-%main{ role:  main }
+%main{ role: :main }
   .body-copy
     %h1 Logga in
-    %p.instructions Logga in med det användarnamn du har personalkatalogen
-  = form_tag sessions_path, id: "login-form", class: "form-horizontal" do
-    .control-group
+    %p.instructions Logga in med det användarnamn du har i personalkatalogen.
+  = form_tag sessions_path, id: "login-form", class: "basic" do
+    .form-group
       .control-label= label_tag :username, 'Användarnamn:'
-      .controls= text_field_tag :username, params[:username], class: "medium"
-    .control-group
+      .controls= text_field_tag :username, params[:username], class: "form-control"
+    .form-group
       .control-label= label_tag :password, 'Lösenord:'
-      .controls= password_field_tag :password, nil, :class => "medium"
-    .control-group
+      .controls= password_field_tag :password, nil, :class => "form-control"
+    .form-group
+      .control-label
       .controls= submit_tag "Logga in", class: "btn btn-primary"
