@@ -119,15 +119,17 @@
     .cke_wrapper {
       box-sizing: border-box;
       padding: 0;
-      border: 1px solid #999;
-      @include radius(0);
+      border: $border;
       .cke_top {
         padding: 6px 6px 0;
       }
       .cke_format a {
-        width: 120px;
+        width: 220px;
         .cke_text {
-          width: 90px;
+          width: 200px;
+        }
+        .cke_openbutton {
+          display: none;
         }
       }
     }
