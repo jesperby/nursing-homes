@@ -23,13 +23,13 @@
             - if nursing_home.images.present?
               = link_to image_tag(nursing_home.images.first.image.url(:thumb), :alt => nursing_home.name), nursing_home
           .summary
-            %h2= link_to nursing_home.name, nursing_home
+            %h2.body-copy= link_to nursing_home.name, nursing_home
             .compare-check
               = check_box_tag "compare-#{nursing_home.id}", nursing_home.id, false, "data-compare" => nursing_home.id
               = label_tag "compare-#{nursing_home.id}", "Lägg till i Min lista"
             %p.neighborhood= nursing_home.neighborhood
             %p.owner-type= nursing_home.categories.map(&:name).join(", ")
-            %p.description= truncate(strip_tags(nursing_home.description), :length => 200)
+            %p.body-copy.description= truncate(strip_tags(nursing_home.description), :length => 200)
 
   #map
 

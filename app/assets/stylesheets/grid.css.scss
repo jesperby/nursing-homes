@@ -1,7 +1,7 @@
 .wrapper {
   @include clearfix();
   margin: 0 auto;
-  max-width: 60em;
+  max-width: 67em;
   padding: 0 1em;
 }
 
@@ -13,7 +13,7 @@ main, .contact-us {
   @include columns(3, true);
 }
 
-@media (max-width: 54em) {
+@media (max-width: 62em) {
   main, .contact-us {
     @include columns(8);
   }
@@ -24,9 +24,6 @@ main, .contact-us {
 }
 
 @media (max-width: 49em) {
-  .wrapper {
-    max-width: 38em;
-  }
   main, .contact-us, #compare-box {
     @include columns(12);
   }

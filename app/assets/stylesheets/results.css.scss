@@ -5,19 +5,17 @@ ul.results {
     @include clearfix();
   }
   .summary {
-    @include columns(9, true);
+    @include columns(8, true);
     margin-bottom: 1em;
     h2 {
       float: left;
-      font-family: $sansSerif;
-      font-size: emize(15);
       margin: 0 0 .2em;
       padding: 0;
     }
     .neighborhood, .owner-type {
       clear: both;
       font-family: $sansSerif;
-      font-size: emize(13);
+      font-size: emize(14);
       line-height: 1.4;
       margin: 0;
     }
@@ -32,7 +30,7 @@ ul.results {
       float: right;
       label {
         display: inline;
-        font-size: emize(13);
+        font-size: emize(14);
         font-family: $sansSerif;
       }
       span.icon-plus:before {
@@ -41,10 +39,10 @@ ul.results {
     }
   }
   .image {
-    @include columns(3);
+    @include columns(4);
     min-height: 1em;
     img {
-      margin-top: .3em;
+      margin-top: .4em;
       width: 100%;
       height: auto;
       border: $border;
@@ -59,7 +57,7 @@ ul.results {
   margin-bottom: 1em;
   li {
     font-family: $sansSerif;
-    font-size: emize(13);
+    font-size: emize(14);
     display: inline;
     margin-right: 1em;
     a {

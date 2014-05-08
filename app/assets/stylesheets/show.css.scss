@@ -18,7 +18,7 @@
       background: $backgroundDarker;
       color: white;
       padding: .4em .8em .5em .7em;
-      font-size: emize(11);
+      font-size: emize(12);
       font-family: $sansSerif;
       li.prev, li.next {
         display: inline;
@@ -66,7 +66,7 @@
     }
     label {
       display: inline;
-      font-size: emize(13);
+      font-size: emize(14);
       font-family: $sansSerif;
     }
   }
@@ -74,7 +74,7 @@
   dl.details {
     clear: both;
     font-family: $sansSerif;
-    font-size: emize(13);
+    font-size: emize(14);
     margin: 0 0 2em;
     border-bottom: $border;
     dt {
@@ -101,7 +101,7 @@
   .quality {
     clear: both;
     font-family: $sansSerif;
-    font-size: emize(13);
+    font-size: emize(14);
     margin: 0 0 .5em;
     border-top: $border;
     .indicator {
@@ -123,7 +123,7 @@
 
   .note {
     font-family: $sansSerif;
-    font-size: emize(13);
+    font-size: emize(14);
     margin: .3em 0 2em;
   }
 
