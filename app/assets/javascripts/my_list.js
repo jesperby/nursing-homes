@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
 
   // Update "Min lista"
   var updateStatus = function() {
-    var $statusList = $("#compare-box .status-list");
+    var $statusList = $("#my-list .status-list");
     $statusList.empty();
     if ( itemsIds && itemsIds.length > 0) {
       $statusList.append("<ul>");
@@ -54,11 +54,11 @@ jQuery(document).ready(function($) {
           )
         );
       });
-      $("#compare-box .compare").show();
-      $("#compare-box .how-to").hide();
+      $("#my-list .compare").show();
+      $("#my-list .how-to").hide();
     } else {
-      $("#compare-box .compare").hide();
-      $("#compare-box .how-to").show();
+      $("#my-list .compare").hide();
+      $("#my-list .how-to").show();
     }
   };
 
@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
   };
 
   // Remove in the compare box
-  $("#compare-box .status-list").on('click', 'li .remove', function() {
+  $("#my-list .status-list").on('click', 'li .remove', function() {
     removeItem( $(this).attr('data-id') );
     checkTheBoxes();
   });

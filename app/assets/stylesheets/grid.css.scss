@@ -9,7 +9,7 @@ main, .contact-us {
   @include columns(9);
 }
 
-#compare-box {
+#my-list {
   @include columns(3, true);
 }
 
@@ -18,13 +18,13 @@ main, .contact-us {
     @include columns(8);
   }
 
-  #compare-box {
+  #my-list {
     @include columns(4, true);
   }
 }
 
 @media (max-width: 49em) {
-  main, .contact-us, #compare-box {
+  main, .contact-us, #my-list {
     @include columns(12);
   }
 }

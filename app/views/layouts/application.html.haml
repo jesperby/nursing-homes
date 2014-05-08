@@ -37,9 +37,9 @@
       = yield
 
       - unless params[:controller] == "nursing_homes" && params[:action] == "compare"
-        - cache "compare-box" do
-          = render 'layouts/compare-box'
-        = render 'layouts/contact-box'
+        - cache "my-list" do
+          = render 'layouts/my_list'
+        = render 'layouts/contact_box'
 
     %script
       = "var CKEDITOR_BASEPATH = '#{root_path}ckeditor/';"
