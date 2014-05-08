@@ -1,8 +1,5 @@
 /* Edit views */
 .edit {
-  #my-list {
-    display: none;
-  }
   menu.actions {
     float: right;
     display: block;
@@ -74,18 +71,6 @@
     &.too-much {
       border: 1px solid #FF0000;
       background: #FFEAE0;
-    }
-  }
-
-  .form-group.quality {
-    .control-label {
-      display: block;
-      width: 100%;
-    }
-    .controls {
-      width: 100%;
-      margin-left: 0;
-      clear: both;
     }
   }
 
