@@ -1,8 +1,12 @@
 .wrapper {
   @include clearfix();
-  margin: 0 auto 2em;
+  margin: 0 auto;
   max-width: 67em;
   padding: 0 1em;
+}
+
+main {
+  margin-bottom: 2em;
 }
 
 body.compare .wrapper {
