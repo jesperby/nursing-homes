@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
   }
 
   function showCount($field, chars, limit) {
-    $count = $field.closest(".control-group").find(".count");
+    $count = $field.closest(".form-group").find(".count");
     $count.html(limit - chars + " av " + limit + " tecken kvar");
 
     if ( limit - chars < 0 ) {

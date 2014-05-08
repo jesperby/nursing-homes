@@ -60,7 +60,6 @@
   .count {
     margin: .4em 0 1.5em;
     padding: .2em .5em;
-    width: 11.8em;
     text-align: center;
     font-family: $sansSerif;
     font-size: emize(14);
@@ -78,7 +77,7 @@
     }
   }
 
-  .control-group.quality {
+  .form-group.quality {
     .control-label {
       display: block;
       width: 100%;
