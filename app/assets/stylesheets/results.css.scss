@@ -54,12 +54,13 @@ ul.results {
 }
 
 .switch-view {
-  margin-bottom: 1em;
+  margin: 0 0 1em;
+  padding: 0;
   li {
     font-family: $sansSerif;
     font-size: emize(14);
     display: inline;
-    margin-right: 1em;
+    margin: 0 1em 0 0;
     a {
       color: black;
       span:before {
@@ -69,6 +70,7 @@ ul.results {
     }
     &.active a {
       cursor: default;
+      text-decoration: none;
     }
   }
 }
