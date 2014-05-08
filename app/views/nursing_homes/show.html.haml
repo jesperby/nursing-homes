@@ -1,8 +1,8 @@
 %main.show.body-copy{ role: :main, class: ("drafted" if @nursing_home.draft) }
   .actions.top
-    = link_to 'Visa alla boenden', root_path, class: "btn btn-small"
+    = link_to 'Visa alla boenden', root_path, class: "btn btn-default btn-sm"
     - if current_user
-      = link_to 'Redigera', edit_nursing_home_path(@nursing_home), class: "btn btn-small"
+      = link_to 'Redigera', edit_nursing_home_path(@nursing_home), class: "btn btn-default btn-sm"
 
   - cache @nursing_home do
     %h1= @nursing_home.name
@@ -24,7 +24,7 @@
       = check_box_tag "compare-#{@nursing_home.id}", @nursing_home.id, false, "data-compare" => @nursing_home.id
       = label_tag "compare-#{@nursing_home.id}", "Lägg till i Min lista"
     %a.show-on-map.btn.btn-small{ href: "#map", data: { poi: @nursing_home.address, "map-selector" => "#map", "scroll-to" => ".main h1" }}
-      %span.icon-map-marker
+      %span.fa.fa-map-marker
       = "Visa på karta"
 
     //eri-no-index
@@ -83,6 +83,6 @@
     %p.note.updated= "Informationen om äldreboendet uppdaterades #{ @nursing_home.updated_at.strftime('%Y-%m-%d') }."
 
   .actions.bottom
-    = link_to 'Visa alla boenden', root_path, class: "btn btn-small"
+    = link_to 'Visa alla boenden', root_path, class: "btn btn-default btn-sm"
     - if current_user
-      = link_to 'Redigera', edit_nursing_home_path(@nursing_home), class: "btn btn-small"
+      = link_to 'Redigera', edit_nursing_home_path(@nursing_home), class: "btn btn-default btn-sm"

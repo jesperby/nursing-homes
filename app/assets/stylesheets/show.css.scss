@@ -20,6 +20,7 @@
       padding: .4em .8em .5em .7em;
       font-size: emize(12);
       font-family: $sansSerif;
+      margin: 0;
       li.prev, li.next {
         display: inline;
         cursor: pointer;
@@ -133,7 +134,8 @@
 
   ul.nearby, ul.attachments  {
     list-style: none;
-    font-size: emize(14);
+    font-family: $sansSerif;
+    font-size: emize(14, 17);
     margin: 0 0 1em;
     padding: 0;
   }
