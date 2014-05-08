@@ -142,3 +142,27 @@
     padding: 0;
   }
 }
+
+@media (max-width: 38em) {
+  .show {
+    .description {
+      @include columns(12);
+    }
+    #slideshow {
+      @include columns(12);
+    }
+    dl.details {
+      border: none;
+      dt, dd {
+        float: none;
+        display: block;
+        border: none;
+        margin: 0;
+        line-height: 1;
+      }
+      dd {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
