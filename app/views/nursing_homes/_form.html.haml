@@ -1,7 +1,7 @@
 - blank_option_tag = @nursing_home.new_record? ? { include_blank: true } : {}
 = javascript_include_tag "/ckeditor/ckeditor"
 
-= form_for(@nursing_home, html: { multipart: true, class: 'form-horizontal', id: 'edit-form' }) do |f|
+= form_for(@nursing_home, html: { multipart: true, class: 'basic', id: 'edit-form' }) do |f|
   - if @nursing_home.errors.any?
     #error_explanation.warning
       #h2 Vänligen korrigera följande uppgifter:
@@ -9,108 +9,111 @@
         - @nursing_home.errors.full_messages.each do |msg|
           %li= msg
 
-  %h2.form-group-title Basinformation
-  .control-group
+  %h2.group-title Basinformation
+  .form-group
     .control-label= f.label :name, "Namn:*"
-    .controls= f.text_field :name, class: "wide"
+    .controls= f.text_field :name, :class => "form-control"
 
-  .control-group
+  .form-group
     .control-label= f.label :description, "Beskrivning:*"
     .controls
-      = f.text_area :description, rows: 20, class: "wide"
+      = f.text_area :description, rows: 20, :class => "form-control"
       .count
-  .control-group
+  .form-group
     .control-label= f.label :standard, "Boendestandard:*"
     .controls
-      = f.text_area :standard, rows: "4", class: "wide"
+      = f.text_area :standard, rows: "4", :class => "form-control"
       .count
-  .control-group
+  .form-group
     .control-label= f.label :seats, "Lägenheter:*"
-    .controls= f.number_field :seats, class: "small"
-  .control-group
+    .controls= f.number_field :seats, :class => "form-control"
+  .form-group
     .control-label= f.label :rent, "Hyra:*"
-    .controls= f.text_field :rent, class: "small"
+    .controls= f.text_field :rent, :class => "form-control"
 
-  .control-group
+  .form-group
     .control-label= label_tag nil, "Typ av boende:*"
     .controls
       = hidden_field_tag "nursing_home[category_ids][]", nil
-      .check-radio{ class: @nursing_home.category_ids.empty? && ! @nursing_home.draft && !@nursing_home.new_record? ? "field_with_errors" : ""  }
+      .checkbox{ class: @nursing_home.category_ids.empty? && ! @nursing_home.draft && !@nursing_home.new_record? ? "field_with_errors" : ""  }
         - Category.all.each do |category|
           %label.checkbox
             = check_box_tag "nursing_home[category_ids][]", category.id, @nursing_home.category_ids.include?(category.id), id: dom_id(category)
             = category.name
 
-  .control-group.owner_type
+  .form-group.owner_type
     .control-label= f.label :owner_type, "Organisationsform:*"
     .controls= select :nursing_home, :owner_type, NursingHome::OWNER_TYPES.map { |key, val| [val, key] },
-        {}.merge(blank_option_tag)
-  .control-group.private
+        {}.merge(blank_option_tag), :class => "form-control"
+  .form-group.private
     .control-label= f.label :owner, "Entreprenör:"
-    .controls= f.text_field :owner, class: "wide"
-  .control-group.private
+    .controls= f.text_field :owner, :class => "form-control"
+  .form-group.private
     .control-label= f.label :url, "Webbadress:"
-    .controls= f.text_field :url, class: "wide"
+    .controls= f.text_field :url, :class => "form-control"
 
-  %h2.form-group-title Kvalitetsmätning enligt brukare
-  .control-group.quality
+  %h2.group-title Kvalitetsmätning enligt brukare
+  .form-group.quality
     .control-label= f.label :quality_average, "#{t('nursing_home.quality_average')}:"
-    .controls= f.number_field :quality_average, class: :small, in: 1..100
-  .control-group.quality
+    .controls= f.number_field :quality_average, :class => "form-control", in: 1..100
+  .form-group.quality
     .control-label= f.label :quality_environment, "#{t('nursing_home.quality_environment')}:"
-    .controls= f.number_field :quality_environment, class: :small, in: 1..100
-  .control-group.quality
+    .controls= f.number_field :quality_environment, :class => "form-control", in: 1..100
+  .form-group.quality
     .control-label= f.label :quality_safety, "#{t('nursing_home.quality_safety')}:"
-    .controls= f.number_field :quality_safety, class: :small, in: 1..100
-  .control-group.quality
+    .controls= f.number_field :quality_safety, :class => "form-control", in: 1..100
+  .form-group.quality
     .control-label= f.label :quality_consideration, "#{t('nursing_home.quality_consideration')}:"
-    .controls= f.number_field :quality_consideration, class: :small, in: 1..100
-  .control-group.quality
+    .controls= f.number_field :quality_consideration, :class => "form-control", in: 1..100
+  .form-group.quality
     .control-label= f.label :quality_food, "#{t('nursing_home.quality_food')}:"
-    .controls= f.number_field :quality_food, class: :small, in: 1..100
-  .control-group.quality
+    .controls= f.number_field :quality_food, :class => "form-control", in: 1..100
+  .form-group.quality
     .control-label= f.label :quality_activities, "#{t('nursing_home.quality_activities')}:"
-    .controls= f.number_field :quality_activities, class: :small, in: 1..100
-  .control-group.quality
+    .controls= f.number_field :quality_activities, :class => "form-control", in: 1..100
+  .form-group.quality
     .control-label= f.label :survey_year, "Mätning genomförd:"
-    .controls= select :nursing_home, :survey_year, Date.today.year - 5..Date.today.year, {include_blank: true}, class: :small
+    .controls= select :nursing_home, :survey_year, Date.today.year - 5..Date.today.year, {include_blank: true}, :class => "form-control"
 
-  %h2.form-group-title Adressuppgifter
-  .control-group
+  %h2.group-title Adressuppgifter
+  .form-group
     .control-label= f.label :address, "Gatuadress:*"
     .controls
-      = f.text_field :address, class: "wide"
+      = f.text_field :address, :class => "form-control"
       = f.hidden_field :geo_position_x
       = f.hidden_field :geo_position_y
-  .control-group
+  .form-group
     .control-label= f.label :post_code, "Postnummer:"
-    .controls= f.text_field :post_code, readonly: true, tabindex: -1
-  .control-group
+    .controls= f.text_field :post_code, readonly: true, tabindex: -1, :class => "form-control"
+  .form-group
     .control-label= f.label :postal_town, "Postadress:"
-    .controls= f.text_field :postal_town, readonly: true, tabindex: -1
-  .control-group
+    .controls= f.text_field :postal_town, readonly: true, tabindex: -1, :class => "form-control"
+  .form-group
     .control-label= f.label :neighborhood, "Stadsområde:"
-    .controls= f.text_field :neighborhood, readonly: true, tabindex: -1
-  .control-group
+    .controls= f.text_field :neighborhood, readonly: true, tabindex: -1, :class => "form-control"
+  .form-group
     .control-label= f.label :phone, "Telefon:*"
-    .controls= f.text_field :phone
-  .control-group
+    .controls= f.text_field :phone, :class => "form-control"
+  .form-group
     .control-label= f.label :fax, "Fax:"
-    .controls= f.text_field :fax
-  .control-group
+    .controls= f.text_field :fax, :class => "form-control"
+  .form-group
     .control-label= f.label :email, "E-post:"
-    .controls= f.text_field :email, class: "wide"
+    .controls= f.text_field :email, :class => "form-control"
 
   = render 'image_uploads', f: f
   = render 'attachment_uploads', f: f
 
-  %h2.form-group-title Publicera
-  .control-group.draft
+  %h2.group-title Publicera
+  .form-group.draft
+    %span.control-label
     .controls
-      %label.checkbox
-        = f.check_box :draft
-        = "Utkast (visa endast för inloggade användare)"
-  .control-group
+      .checkbox
+        %label.checkbox
+          = f.check_box :draft
+          = "Utkast (visa endast för inloggade användare)"
+  .form-group
+    .control-label
     .controls
       = f.submit 'Spara', class: "btn btn-primary"
-      = link_to 'Avbryt', @nursing_home, class: 'btn'
+      = link_to 'Avbryt', @nursing_home, class: 'btn btn-default'

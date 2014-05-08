@@ -1,10 +1,10 @@
 - new_images = @nursing_home.images.collect { |i| i.new_record? ? true : false }
 
-%h2.form-group-title Bilder
-.help Bilderna ska vara 1200px breda och 800px höga och får inte vara större än 1MB.
+%h2.group-title Bilder
+.help-block Bilderna ska vara 1200px breda och 800px höga och får inte vara större än 1MB.
 
 - if new_images.include?(false)
-  .control-group
+  .form-group
     #sort-images.thumbs.controls
       = f.fields_for :images do |asset_fields|
         - unless asset_fields.object.new_record?
@@ -16,14 +16,14 @@
               = asset_fields.check_box :_destroy
               = asset_fields.label :_destroy, "Ta bort"
 
-.control-group
+.form-group
   .control-label Lägg till bilder:
   - if new_images.include?(true)
-    .controls
+    .controls.uploads
       = f.fields_for :images do |asset_fields|
         - if asset_fields.object.new_record?
-          = asset_fields.file_field :image
+          = asset_fields.file_field :image, class: "form-control"
   - else
-    .help
+    .help-block
       = "Du kan maximalt använda #{APP_CONFIG["max_number_of_images"]} bilder."
       = "För att byta ut någon av bilderna ovan tar du först bort de bilder du vill byta ut och klickar på spara."

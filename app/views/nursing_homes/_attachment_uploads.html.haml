@@ -1,31 +1,33 @@
 - new_attachments = @nursing_home.attachments.collect { |i| i.new_record? ? true : false }
 
-%h2.form-group-title Bilagor
-.help Här kan du ladda upp PDF- och Excel-filer för kvalitetsuppföljning av verksamheten. Filerna får inte vara större än 1MB.
+%h2.group-title Bilagor
+.help-block Här kan du ladda upp PDF- och Excel-filer för kvalitetsuppföljning av verksamheten. Filerna får inte vara större än 1MB.
 
 - if new_attachments.include?(false)
   .control.group
     = f.fields_for :attachments do |asset_fields|
       - unless asset_fields.object.new_record?
-        .control-group
+        .form-group
           .control-label= asset_fields.label :attachment_link_text, "Länktext:*"
-          .controls= asset_fields.text_field :attachment_link_text
+          .controls= asset_fields.text_field :attachment_link_text, class: "form-control"
           .controls= asset_fields.object.attachment_file_name
           .controls
-            %label.checkbox
-              = asset_fields.check_box :_destroy
-              = "Ta bort"
+            .checkbox
+              %label.checkbox
+                = asset_fields.check_box :_destroy
+                = "Ta bort"
 
 - if new_attachments.include?(true)
   = f.fields_for :attachments do |asset_fields|
     - if asset_fields.object.new_record?
-      .control-group
+      .form-group
         .control-label= asset_fields.label :attachment_link_text, "Länktext:*"
         .controls
-          = asset_fields.text_field :attachment_link_text, class: "attachements-field"
-        .controls
-          = asset_fields.file_field :attachment, class: "file"
+          = asset_fields.text_field :attachment_link_text, class: "form-control"
+        %span.control-label
+        .controls.uploads
+          = asset_fields.file_field :attachment, class: "form-control file"
 - else
-  .help
+  .help-block
     = "Du kan maximalt använda #{APP_CONFIG["max_number_of_attachments"]} bilagor."
     = "För att byta ut någon av bilagorna ovan tar du först bort de bilagor du vill byta ut och klickar på spara."

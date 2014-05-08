@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-
 module ApplicationHelper
-
   # Called from a partial to make it possible to use titles based on the content together with actions caching
   def page_title
     if !@nursing_home.blank?
@@ -24,10 +22,10 @@ module ApplicationHelper
   end
 
   def delete_icon_text
-    raw "#{content_tag(:span, nil, class: 'icon-trash icon-large')} Radera"
+    raw "#{content_tag(:span, nil, class: 'fa fa-trash-o fa-lg')} Radera"
   end
 
   def add_icon_text
-    raw "#{content_tag(:span, nil, class: 'icon-plus')} Lägg till"
+    raw "#{content_tag(:span, nil, class: 'fa fa-plus')} Lägg till"
   end
 end
