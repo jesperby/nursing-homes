@@ -1,5 +1,5 @@
 .actions.top
-  = link_to 'Visa alla boenden', root_path, class: "btn btn-small"
+  = link_to 'Visa alla boenden', root_path, class: "btn btn-default btn-sm"
 %h1.body-copy Jämför äldreboenden
 #compare
   - unless @nursing_homes
@@ -22,7 +22,7 @@
           %td.first
           - @nursing_homes.each do |nursing_home|
             %td{ :class => "item-#{nursing_home.id} remove" }
-              .remove.btn.btn-small{ "data-id" => nursing_home.id }= "Ta bort"
+              .remove.btn.btn-default.btn-sm{ "data-id" => nursing_home.id }= "Ta bort"
         %tr
           %th Adress:
           - @nursing_homes.each do |nursing_home|
@@ -72,4 +72,4 @@
             %td{ :class => "item-#{nursing_home.id}" }=  nursing_home.survey_year
 
 .actions
-  = link_to 'Visa alla boenden', root_path, class: "btn btn-small"
+  = link_to 'Visa alla boenden', root_path, class: "btn btn-default btn-sm"

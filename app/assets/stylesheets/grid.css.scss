@@ -1,9 +1,15 @@
 .wrapper {
   @include clearfix();
-  margin: 0 auto;
+  margin: 0 auto 2em;
   max-width: 67em;
   padding: 0 1em;
 }
+
+body.compare .wrapper {
+  max-width: 200em;
+  padding: 0 1em;
+}
+
 
 main, .contact-us {
   @include columns(9);
