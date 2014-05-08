@@ -6,11 +6,17 @@ ul.results {
   }
   .summary {
     @include columns(8, true);
+    @media (max-width: 28em) {
+      @include columns(12);
+    }
     margin-bottom: 1em;
     h2 {
       float: left;
       margin: 0 0 .2em;
       padding: 0;
+      @media (max-width: 52em) {
+        float: none;
+      }
     }
     .neighborhood, .owner-type {
       clear: both;
@@ -28,6 +34,10 @@ ul.results {
     }
     .compare-check {
       float: right;
+      @media (max-width: 52em) {
+        float: none;
+        margin: .5em 0;
+      }
       label {
         display: inline;
         font-size: emize(14);
@@ -46,6 +56,9 @@ ul.results {
       width: 100%;
       height: auto;
       border: $border;
+    }
+    @media (max-width: 28em) {
+      display: none;
     }
   }
 }

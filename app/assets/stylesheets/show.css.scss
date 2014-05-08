@@ -122,6 +122,23 @@
 
       }
     }
+    @media (max-width: 40em) {
+      border-top: none;
+      .indicator {
+        border-bottom: none;
+        .label {
+          float: none;
+          width: auto;
+        }
+        .value {
+          float: none;
+          margin: .4em 0 1em;
+          .graph {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 
   .note {
