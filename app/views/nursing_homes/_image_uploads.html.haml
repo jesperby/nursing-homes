@@ -22,7 +22,7 @@
     .controls.uploads
       = f.fields_for :images do |asset_fields|
         - if asset_fields.object.new_record?
-          = asset_fields.file_field :image, class: "form-control"
+          = asset_fields.file_field :image
   - else
     .help-block
       = "Du kan maximalt använda #{APP_CONFIG["max_number_of_images"]} bilder."
