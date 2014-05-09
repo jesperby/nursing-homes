@@ -13,23 +13,43 @@
   .form-row.neighborhood {
     clear: left;
   }
-  .form-row.owner-type {
-    @media (max-width: 60em) {
-      clear: left;
-    }
-  }
   .status {
     clear: left;
   }
   .form-row.reset {
+    display: none;
     label {
       visibility: hidden;
     }
     input {
       display: block;
-      visibility: hidden;
-      &.activated {
-        visibility: visible;
+    }
+  }
+  @media (max-width: 60em) {
+    .form-row {
+      float: none;
+      .control-label {
+        @include columns(4);
+      }
+      .form-control {
+        @include columns(8, true);
+      }
+    }
+  }
+  @media (max-width: 40em) {
+    .form-row {
+      @include clearfix();
+      margin: .2em 0 .6em;
+      .control-label {
+        @include columns(12);
+      }
+      .form-control {
+        @include columns(12);
+      }
+    }
+    .form-row.reset {
+      .control-label {
+        display: none;
       }
     }
   }

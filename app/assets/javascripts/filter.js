@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
       });
 
       // Reset filter button w/listner
-      $($filterForm).find("input[type='reset']").addClass("activated").click(function() {
+      $($filterForm).find(".form-row.reset").show().find("input[type='reset']").click(function() {
         $filterForm.find("select option").removeAttr('selected');
         filter = {};
         saveFilter();
@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
 
   function resetList() {
     // Remove reset button
-    $filterForm.find("input[type='reset']").removeClass("activated");
+    $filterForm.find(".form-row.reset").hide();
 
     $listItems.filter(":hidden").slideDown();
     filteredIds = [];
