@@ -15,9 +15,9 @@ nav#my-list {
       width: 1em;
       height: 1em;
       cursor: pointer;
-      color: $backgroundDark;
+      color: $background-dark;
       &:hover {
-        color: $dangerColor;
+        color: $danger-color;
       }
     }
   }

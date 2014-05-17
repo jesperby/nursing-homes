@@ -33,7 +33,7 @@
       }
       .destroy {
         label, input {
-          font-family: $sansSerif;
+          font-family: $sans-serif;
           float: none;
           display: inline;
           width: auto;
@@ -62,7 +62,7 @@
     margin: .4em 0 1.5em;
     padding: .2em .5em;
     text-align: center;
-    font-family: $sansSerif;
+    font-family: $sans-serif;
     font-size: emize(14);
     &.ok {
       border: 1px solid #ACDFA7;

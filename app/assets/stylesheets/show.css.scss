@@ -17,11 +17,11 @@
     }
     menu {
       display: none;
-      background: $backgroundDarker;
-      color: white;
+      background: $background-darker;
+      color: #fff;
       padding: .4em .8em .5em .7em;
       font-size: emize(12);
-      font-family: $sansSerif;
+      font-family: $sans-serif;
       margin: 0;
       li.prev, li.next {
         display: inline;
@@ -70,13 +70,13 @@
     label {
       display: inline;
       font-size: emize(14);
-      font-family: $sansSerif;
+      font-family: $sans-serif;
     }
   }
 
   dl.details {
     clear: both;
-    font-family: $sansSerif;
+    font-family: $sans-serif;
     font-size: emize(14);
     margin: 0 0 2em;
     border-bottom: $border;
@@ -103,7 +103,7 @@
 
   .quality {
     clear: both;
-    font-family: $sansSerif;
+    font-family: $sans-serif;
     font-size: emize(14);
     margin: 0 0 .5em;
     border-top: $border;
@@ -142,7 +142,7 @@
   }
 
   .note {
-    font-family: $sansSerif;
+    font-family: $sans-serif;
     font-size: emize(14);
     margin: .3em 0 2em;
   }
@@ -153,7 +153,7 @@
 
   ul.nearby, ul.attachments  {
     list-style: none;
-    font-family: $sansSerif;
+    font-family: $sans-serif;
     font-size: emize(14, 17);
     margin: 0 0 1em;
     padding: 0;

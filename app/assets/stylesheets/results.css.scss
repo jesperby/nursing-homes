@@ -20,7 +20,7 @@ ul.results {
     }
     .neighborhood, .owner-type {
       clear: both;
-      font-family: $sansSerif;
+      font-family: $sans-serif;
       font-size: emize(14);
       line-height: 1.4;
       margin: 0;
@@ -41,7 +41,7 @@ ul.results {
       label {
         display: inline;
         font-size: emize(14);
-        font-family: $sansSerif;
+        font-family: $sans-serif;
       }
       span.icon-plus:before {
         margin-right: .6em;
@@ -70,14 +70,14 @@ ul.results {
   margin: 0 0 1em;
   padding: 0;
   li {
-    font-family: $sansSerif;
+    font-family: $sans-serif;
     font-size: emize(14);
     display: inline;
     margin: 0 1em 0 0;
     a {
-      color: black;
+      color: #000;
       span:before {
-        color: $backgroundDarker;
+        color: $background-darker;
         margin-right: .2em;
       }
     }
