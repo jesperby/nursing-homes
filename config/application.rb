@@ -46,6 +46,12 @@ module NursingHomes
 
     config.assets.precompile += %w( editors.css )
 
+    config.assets.paths += [
+      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets").to_s,
+      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "shared").to_s,
+      Rails.root.join("vendor", "malmo_shared_assets", "stylesheets", "external").to_s
+    ]
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end

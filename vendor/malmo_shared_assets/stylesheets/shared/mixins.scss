@@ -5,7 +5,7 @@
 //      Optional. Defaults to false. Forced to true if the number of columns is 12 (full width block)
 //    $gutter is the margin to the right of the block in percentage of the full width.
 //      Defaults to 2%.
-@mixin columns($span, $last: false, $gutter: 3%) {
+@mixin columns($span, $last: false, $gutter: 2%) {
   $total-columns: 12;
 
   // (column width in percentage) minus its (own portion of all the gutters)
@@ -71,7 +71,7 @@
 
 // Use with a media query to disable the hz mode below a breakpoint
 @mixin form-force-vertical() {
-  .form-horizontal {
+  .mf-v3 form.basic .form-group {
     .control-label {
       display: block;
       width: 100%;
@@ -85,11 +85,11 @@
 }
 
 @mixin rotate($deg) {
-  -webkit-transform: rotate(#{$deg}deg);
-  -moz-transform: rotate(#{$deg}deg);
-  -ms-transform: rotate(#{$deg}deg);
-  -o-transform: rotate(#{$deg}deg);
-  transform: rotate(#{$deg}deg);
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
 }
 
 @mixin clearfix() {
