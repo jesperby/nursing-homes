@@ -8,13 +8,9 @@
 
     %menu.switch-view
       %li#as-list.active
-        %a{ href: nursing_homes_path }
-          %span.fa.fa-list.fa-large
-          Visa som lista
+        %a.m-icon-list{ href: nursing_homes_path } Visa som lista
       %li#as-map
-        %a{ href: nursing_homes_path }
-          %span.fa.fa-map-marker.fa-large
-          Visa på karta
+        %a.m-icon-location{ href: nursing_homes_path } Visa på karta
 
     %ul.results
       - @nursing_homes.each do |nursing_home|

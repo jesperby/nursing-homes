@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
       $.each(itemsIds, function(index, id) {
         $statusList.find("ul").append(
           $("<li>").append( $("<a>").attr("href", nursingHomePath + id).text(nursingHomes[id]) ).prepend(
-            $("<span class='fa fa-times remove'>").attr( { "data-id": id, "title": "Ta bort" } )
+            $("<span class='remove m-icon-close'>").attr( { "data-id": id, "title": "Ta bort" } )
           )
         );
       });
@@ -93,6 +93,11 @@ jQuery(document).ready(function($) {
       }
     });
   };
+
+  // Change bg on hover
+  $("#my-list").on("mouseenter mouseleave", ".remove", function() {
+    $(this).toggleClass("m-icon-close m-icon-close-0");
+  });
 
   // Remove in the compare box
   $("#my-list .status-list").on('click', 'li .remove', function() {

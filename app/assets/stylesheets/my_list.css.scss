@@ -15,10 +15,7 @@ nav#my-list {
       width: 1em;
       height: 1em;
       cursor: pointer;
-      color: $background-dark;
-      &:hover {
-        color: $danger-color;
-      }
+      background-size: 10px;
     }
   }
   .how-to {
