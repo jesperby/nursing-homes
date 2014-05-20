@@ -13,7 +13,7 @@
       - unless contact_data['post_code'].blank?
         .post_code= "#{contact_data['post_code']} #{contact_data['postal_town']}"
       - unless contact_data['address'].blank?
-        .map= link_to "Visa på karta", "#map", title: contact_data['address'], class: "show-on-map",
+        .map= link_to "Visa på karta", "#map", title: contact_data['address'], class: "show-on-map m-icon-location",
           data: { poi: contact_data['address'], "map-selector" => "#map", "scroll-to" => "main h1" }
 
       - unless contact_data['email'].blank?
