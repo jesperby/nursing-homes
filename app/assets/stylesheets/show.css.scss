@@ -63,6 +63,8 @@
   .compare-check {
     float: right;
     clear: right;
+    *float: none;
+    *clear: both;
     margin: 0;
     white-space: nowrap;
     input {
