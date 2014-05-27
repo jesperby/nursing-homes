@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
 
   // Set filter select box values on load and perform filtering
   function setFilter() {
-    filter = JSON.parse($.cookie('nursing_homes_filter')) || {};
+    filter = $.cookie('nursing_homes_filter') ? JSON.parse($.cookie('nursing_homes_filter')) : {};
     if (!$.isEmptyObject(filter)) {
       if (!!filter.neighborhood) $("#neighborhood option[value=" + filter.neighborhood + "]").attr("selected", true);
       if (!!filter.category) $("#category option[value=" + filter.category + "]").attr("selected", true);
