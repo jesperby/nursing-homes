@@ -13,22 +13,22 @@ development:
   <<: *defaults
   title_suffix: "Hitta & jämför äldreboenden - Malmö stad (utvecklingsserver)"
   assets_url_base: "//www.local.malmo.se:3001/assets/"
-  map_url: "//kartor.malmo.se/rest/ol/2.0/?config=../configs/aldreboende-1.0.js"
+  map_url: "//kartor.malmo.se/init/?appid=aldreboende-v1"
 
 test:
   <<: *defaults
   title_suffix: "Hitta & jämför äldreboenden - Malmö stad (testserver)"
   assets_url_base: "//www.local.malmo.se:3001/assets/"
-  map_url: "//kartor.malmo.se/rest/ol/2.0/?config=../configs/aldreboende-1.0.js"
+  map_url: "//kartor.malmo.se/init/?appid=aldreboende-v1"
 
 staging:
   <<: *defaults
   title_suffix: "Hitta & jämför äldreboenden - Malmö stad (testserver)"
   assets_url_base: "//assets.malmo.se/external/v4-staging/"
-  map_url: "//kartor.malmo.se/rest/ol/2.0/?config=../configs/aldreboende-1.0.js"
+  map_url: "//kartor.malmo.se/init/?appid=aldreboende-v1"
 
 production:
   <<: *defaults
   title_suffix: "Hitta & jämför äldreboenden - Malmö stad"
   assets_url_base: "//assets.malmo.se/external/v4/"
-  map_url: "//kartor.malmo.se/rest/ol/2.0/?config=../configs/aldreboende-1.0.js"
+  map_url: "//kartor.malmo.se/init/?appid=aldreboende-v1"
