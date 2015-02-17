@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.18'
-gem 'mysql2', '~> 0.3.14'
+gem 'rails', '~> 3.2.21'
+gem 'mysql2', '~> 0.3.18'
 
 gem 'jquery-rails', '~> 3.0.4'
 gem 'haml', '~> 4.0.4'
@@ -20,7 +20,7 @@ group :development do
 end
 
 group  :staging, :test, :production do
-  gem 'dalli', '2.6.4'
+  gem 'dalli', '2.7.2'
 end
 
 group :assets do
