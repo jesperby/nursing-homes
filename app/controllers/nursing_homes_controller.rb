@@ -71,7 +71,8 @@ class NursingHomesController < ApplicationController
 
   def compare
     add_body_class('compare')
-    @nursing_homes = cookies[:nursing_homes_compare].blank? ?  false : NursingHome.where( :id => cookies[:nursing_homes_compare].split("|") );
+    nursing_homes_ids = cookies[:nursing_homes_compare].gsub!(/['"]/, '').split('|')
+    @nursing_homes = nursing_homes_ids.blank? ?  false : NursingHome.where( :id => nursing_homes_ids )
   end
 
   # Return all nursing homes in json[p]
