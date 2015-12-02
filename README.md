@@ -4,9 +4,9 @@ Nursing Homes, “Hitta & jämför äldreboenden”, is a Ruby on Rails based ap
 For more information about the application, contact cwg@malmo.se.
 
 ## Dependencies
-* Ruby 1.9.3 or 2.0
+* Ruby 1.9.3
 * Ruby on Rails 3.2
-* MySQL or PostgreSQL
+* MySQL
 * LDAP for authentication
 * ImageMagick
 * Memcached
